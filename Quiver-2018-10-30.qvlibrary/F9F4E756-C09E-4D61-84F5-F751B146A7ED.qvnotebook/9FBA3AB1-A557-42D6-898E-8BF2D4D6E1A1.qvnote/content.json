@@ -1,0 +1,45 @@
+{
+  "title": "Vim cheatsheet ",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "\n## Copying lines\n`\"0gp`                    put the text from register 0 after the cursor, and leave the cursor just after the next text\n"
+    },
+    {
+      "type": "markdown",
+      "data": "# Dot command\n`.` - repeat the last change (command + motion/text-object)\n\n# General\n`q:` - command history\n`q/` - history of searches\n\n# Browse settings\n`:browse set`\n\n# Cursor movements\n`t`- move to in-front of a character\n`T` - move back to in-front of a character\n`)` - next sentence\n`]]` - next } or section\n`F` - search backwards\n\n# Editing\n`==` - auto-indent current line\n`:%retab` - fix spaces / tabs issues in whole file\n`t,c,` - substitute text between commas\n\n# Bookmarks\n\n`ma` - make a bookmark a \n``a` - go to bookmark a \n`:mark` - list all bookmarks\n`'a` - go to the line with bookmark a               \n\n# Text objects\n`)` - paranthesis\n`t` - tag\n`{` - beginning of paragraph\n`}` - end of paragraph\n`{w` - first word of paragraph\n`}ge` - last word of the paragraph\n`t)` - until closing bracket\n\n# VISUAL BLOCKS\n\n`<C-v>jj$` - select block until end of line\n\n# Editing\n\n## STANDARD MODE\n\n`gR` virtual replace mode\n`>..` indent the text and repeat\n`gUit` make text between tags uppercase\n`r|` repeats adding the pipe\n`Vr-` select the entire line, repeat the \"-\" for the row\n\n## INSERT MODE\n\n`<C-r>0` pastes the text from the register\n`<C-r>=6*35` put the calculation result in the register\n\n# Exec commands\n\n`:9p` move to line 9, print it\n`:10d` move to line 10, and delete it\n`:7,11m$` move range to the end of the file\n`:11t` copy line\n\n# NORMAL MODE\n\n`:'<,'>normal A;` add semi-colon to the end of all the highlighted lines\n`:%normal A;` add semi-colon to all the lines in file\n`:%normal i//` comment out entire js line\n\n## Delete \n`dt)` - delete up until next closing parenthesis\n`d/world` - delete up until the first match for \"world\"\n`daw` - delete around word\n`dip` - delete inner paragraph\n`d}` - function definition\n\n## Format\n`<ip` - indent paragraph outwards\n`>ip` - indent paragraph inwards\n`=ip` - autoident\n\n# Windows and Tabs\n`:new` - new file\n`:split` - open file in new screen\n`<C-w>h,j,k,l` - navigate to the window\n`<C-w>H,J,K,L` - move the current window\n`[count]<C-w>-` - decrease the size of the window\n`[count]<C-w>+` - increase the size of the window\n`[count]<C-w><` - decrease the width of the window\n`[count]<C-w>>` - increase the width of the window\n`<C-w>=` - equalize the window\n\n## Positioning the buffer in the window\n`zz` - center the current window\n`zt` - bring the current line to the top of the window\n`zb` - bring the current line to the bottom of the window\n\n## Tabs\n`:tab` - new tab\n`:tabedit` - open file in new tab\n`gt` - next tab\n`gT` - previous tab\n`<C-w>T` - move file in split screen into a new tab\n\n# Leader \nlet mapleader = \"\\<Space>\"\n\n# Remapping\n`nmap <leader>vr :sp $MYVIMRC<cr>`\n`nmap <leader>so :source $MYVIMRC<cr>`\n`nmap k gk` - visually move up\n`nmap j gj` - visually move down\n\n## Insert mode\n`imap jk <esc>` - escape\n`imap kj <esc>` - ecsape\n\n## Command\n`command! Q q` - alias quit\n\n## Search\n`:%s/foo/bar/g`\n`:6,10s/foo/bar/g`\n"
+    },
+    {
+      "type": "markdown",
+      "data": "```bash\n#########################\n# Macros\n#########################\n\nqa                   start recording macro 'a'\nq                    quit recording\n@a                   replay macro 'a'\n@:                   replay last command\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "```bash\n#########################\n# VISUAL MODE\n#########################\n\naw mark a word\nab a () block\nab a {} block\nib inner () block\nib inner {} block\n\nv% selects matching parenthesis\nvi{ selects matching curly brace\nvi\" selects text between double quotes\nvi' 'selects text between single quotes'\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "# Visual mode\n\n`gv` last visual select"
+    },
+    {
+      "type": "markdown",
+      "data": "# Plugins\n- scroll with `cmd-d` and `cmd-u` \n\n# airline/vim-gitgutter\n\n`ic` - operates on all lines in the current hunk\n`ac` - operates on all liens in the current hunk and surrounding lines\n`<Leader>ha` - stage hunk\n`<Leader>hr` - unstage hunk\n`]c` - next hunk\n`[c` - previous hunk\n`<Leader>hp` - preview hunk in scratch\n\n# ctrlp\n`C-p` last search\n`C-n` goes forward in search\n`C-t` open highlighted file in a new tab\n`C-s` open highlighted file in a new split\n`C-v` open highlighted file in a new vertical split\n\n# surround\n`cs\"'` - change double quote to single quote\n`cs'<p>` - change single quote to html tags\n`cst\"` - change tags to double quotes\n`ds\"` - destroy delimiters\n`ys` - wrap\n`ysiw]` - wrap inner word in ]\n`yssb` or `yss)` - wrapp line in parentheses\n`S<p class=\"a\">` in V mode - wraps an element"
+    },
+    {
+      "type": "markdown",
+      "data": "# vim-fugitive\n`:Gstatus` - git status\n`-` - add / reset a files changes\n`p` - add / reset patch\n`:Gwrite` - like `git add` when called from a work tree file or `git checkout` when called from index or a blob history"
+    },
+    {
+      "type": "markdown",
+      "data": "# Ack\n`gv` - search selected text\n`<leader>g` - open Ack\n`<leader>r` - search and replace the selected text\n\n## Cope \n`<leader>cc` - display search results\n`<leader>n` - next result\n`<leader>p` - previous result"
+    },
+    {
+      "type": "markdown",
+      "data": "# Example dotfiles\n[thoughtbot](https://github.com/thoughtbot/dotfiles)\n[thoughtbot ben](https://github.com/r00k/dotfiles)\n[thoughtbot chris](https://github.com/christoomey/dotfiles)"
+    },
+    {
+      "type": "markdown",
+      "data": "# Wishlist\n\n[goyo.vim](https://github.com/junegunn/goyo.vim) - distraction free"
+    }
+  ]
+}

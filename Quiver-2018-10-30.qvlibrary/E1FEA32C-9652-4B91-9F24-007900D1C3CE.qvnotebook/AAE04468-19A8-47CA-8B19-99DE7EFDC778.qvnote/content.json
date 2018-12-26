@@ -1,0 +1,17 @@
+{
+  "title": "Asychronous control flow patterns with callbacks",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Sequential execution flow\n\n```js\nfunction iterate (index) {\n    if (index === tasks.length) {\n        return finish()\n    }\n    const task = tasks[index]\n    task(function () {\n        iterate(index + 1)\n    }\n}\n\nfunction finish () {\n    // do something\n}\n\niterate(0)\n```\n\n# Parallel execution flow\n\n```js\n\nconst tasks = [/*  */]\nlet completed = 0\n\ntasks.forEach(task => {\n    task(() => {\n        if (++completed === tasks.length) {\n            finish()  \n        }\n    })\n}\n\nfunction finish () {\n    // do something\n}\n\niterate(0);\n```\n\n# Limited concurrency parallel execution\n\n```js\nconst tasks = [/* */]\nlet completed = 0\nlet concurrency = 2\nlet running = 0\nlet index = 0\n\nfunction next () {\n    while (running < concurrency && index < tasks.length) {\n        task = tasks[index++]\n        task(() => {\n            if (completed === tasks.length) {\n                return finish()\n            }\n            completed++, running--\n        })\n        running++\n    }\n}\n\n\nnext()\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "# Globally limiting concurrency"
+    },
+    {
+      "type": "markdown",
+      "data": "```js\n\"use strict\";\n\nmodule.exports = class TaskQueue {\n  constructor (concurrency) {\n    this.concurrency = concurrency;\n    this.running = 0;\n    this.queue = [];\n  }\n\n  pushTask (task) {\n    this.queue.push(task);\n    this.next();\n  }\n\n  next() {\n    while (this.running < this.concurrency && this.queue.length) {\n      const task = this.queue.shift();\n      task (() => {\n        this.running--;\n        this.next();\n      });\n      this.running++;\n    }\n  }\n};\n\n```"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "focus method",
+  "cells": [
+    {
+      "type": "code",
+      "language": "css",
+      "data": "fieldsArr[0].focus();"
+    }
+  ]
+}

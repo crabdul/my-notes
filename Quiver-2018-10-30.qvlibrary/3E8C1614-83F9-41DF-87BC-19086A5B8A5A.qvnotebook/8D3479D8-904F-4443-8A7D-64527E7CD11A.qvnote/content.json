@@ -1,0 +1,14 @@
+{
+  "title": "openssl",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Create an openssl certificate"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem"
+    }
+  ]
+}

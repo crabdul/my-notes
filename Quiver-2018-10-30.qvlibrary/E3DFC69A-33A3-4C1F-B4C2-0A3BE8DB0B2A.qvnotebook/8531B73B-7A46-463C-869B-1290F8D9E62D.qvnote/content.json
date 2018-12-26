@@ -1,0 +1,13 @@
+{
+  "title": "django.urls",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**`include`**\n\nAllows referencing other URLconfs.\n\nWhenever django encounters `include()`, it chops off whatever part of the URL matched up to that point and sends the remaining string to the included URLconf for further processing."
+    },
+    {
+      "type": "markdown",
+      "data": "**`path`**\n\nWhen django finds a matching pattern, it calls the specified view function with an `HttpRequest` object as the first argument"
+    }
+  ]
+}

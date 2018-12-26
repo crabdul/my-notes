@@ -1,0 +1,9 @@
+{
+  "title": "Unordered parallel stream execution",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "This pattern can only be used when the order in which the data is processed isn't important\n\n## Implementing an unordered parallel stream (URL status monitoring application)\n\n**`parallelStream`**\n\n```js\n\"use strict\";\n\nconst stream = require('stream');\n\nclass ParallelStream extends stream.Transform {\n  constructor(userTransform) {\n    super({objectMode: true});\n    this.userTransform = userTransform;\n    this.running = 0;\n    this.terminateCallback = null;\n  }\n\n  _transform(chunk, enc, done) {\n    this.running++;\n    this.userTransform(chunk, enc, this._onComplete.bind(this), this.push.bind(this));\n    done();\n  }\n\n  _flush(done) {\n    if(this.running > 0) {\n      this.terminateCallback = done;\n    } else {\n      done();\n    }\n  }\n\n  _onComplete(err) {\n    this.running--;\n    if(err) {\n      return this.emit('error', err);\n    }\n    if(this.running === 0) {\n      this.terminateCallback && this.terminateCallback();\n    }\n  }\n}\n\nmodule.exports = ParallelStream;\n\n```\n\n**`checkUrls.js`**\n\n```js\n\"use strict\";\n\nconst fs = require('fs');\nconst split = require('split');\nconst request = require('request');\nconst ParallelStream = require('./parallelStream');\n\nfs.createReadStream(process.argv[2])         //[1]\n  .pipe(split())                             //[2]\n  .pipe(new ParallelStream((url, enc, done, push) => {     //[3]\n    if(!url) return done();\n    request.head(url, (err, response) => {\n      push(url + ' is ' + (err ? 'down' : 'up') + '\\n');\n      done();\n    });\n  }))\n  .pipe(fs.createWriteStream('results.txt'))   //[4]\n  .on('finish', () => console.log('All urls were checked'))\n;\n\n```"
+    }
+  ]
+}

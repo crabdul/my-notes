@@ -1,0 +1,13 @@
+{
+  "title": "Model relationships",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](https://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#one-to-one)"
+    },
+    {
+      "type": "markdown",
+      "data": "## Many-to-one\n\nMany to one places a foreign key in the parent table referencing the child. relationship() is declared on the parent, where a new scalar-holding attribute will be created:\n\n```sql\nclass Flight(db.Model):\n    __tablename__ = \"flights\"\n    id = db.Column(db.Integer, primary_key=True)\n    duration = db.Column(db.Integer, nullable=False)\n    origin_id = db.Column(db.Integer, db.ForeignKey('locations.id'))\n    destination_id = db.Column(db.Integer, db.ForeignKey('locations.id'))\n```\n\n\n```sql\nclass Parent(Base):\n    __tablename__ = 'parent'\n    id = Column(Integer, primary_key=True)\n    child_id = Column(Integer, ForeignKey('child.id'))\n    child = relationship(\"Child\")\n\nclass Child(Base):\n    __tablename__ = 'child'\n    id = Column(Integer, primary_key=True)\n```\n\n### Bi-directional behaviour \n\nBidirectional behavior is achieved by adding a second `relationship()` and applying the `relationship.back_populates` parameter in both directions:\n\n```sql\nclass Parent(Base):\n    __tablename__ = 'parent'\n    id = Column(Integer, primary_key=True)\n    child_id = Column(Integer, ForeignKey('child.id'))\n    child = relationship(\"Child\", back_populates=\"parents\")\n\nclass Child(Base):\n    __tablename__ = 'child'\n    id = Column(Integer, primary_key=True)\n    parents = relationship(\"Parent\", back_populates=\"child\")\n```"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Webpack",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## `DllPlugin`\ncreates a manifest.json file to the given path, which is used by the DllReferencePlugin to map dependencies.\n\ncontains mappings from require and import requests, to module ids\n\n[article](https://medium.com/@soederpop/webpack-plugins-been-we-been-keepin-on-the-dll-cdfdd6cb8cd7)\n[example](https://github.com/webpack/webpack/blob/master/examples/explicit-vendor-chunk/README.md)\n\n## Speed up webpack\n[speed measure plugin](https://github.com/stephencookdev/speed-measure-webpack-plugin)\n[slack engineering article](https://slack.engineering/keep-webpack-fast-a-field-guide-for-better-build-performance-f56a5995e8f1)\n\n## Bundles and chunks\n[github discussion](https://github.com/webpack/webpack.js.org/issues/970)"
+    }
+  ]
+}

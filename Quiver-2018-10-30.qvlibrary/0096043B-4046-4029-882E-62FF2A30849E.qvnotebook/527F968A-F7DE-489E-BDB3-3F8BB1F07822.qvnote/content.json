@@ -1,0 +1,9 @@
+{
+  "title": "_index_Regex",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[Debuggex](https://www.debuggex.com/)\n\n## Assertion/Quantifiers\n\n```\n$       matches beginning of line\n^       matches end of line\n*       0 or more\n?       0 or 1\n+       1 or more\n{n}     exactly n\n{n,}    n or more\n{n,m}   between n or more\n```\n\n## Characters\n\n```\n.       any expect newline\n[abc]   a, b, or c\n[^abc]  anything but a, b, c\n\\d      digit\n\\s      space\n]w      word character\n```\n\n## Examples\n\n**match beginning and ending of line**\n```\n^12$\n\n# pass\n12\n\n# fail\n1234\n```\n\n**match one character from the range**\n```\n^[0-9]$\n\n# pass\n2\n\n# fail \n23\n```\n\n**match character from range n times**\n```\n^[12796]{3}$\n\n# pass \n129\n\n# fail \n1296\n```\n**match character from range n or more times**\n```\n^[12796]{3,}$\n\n```\n\n**match one or more of characters from range**\n```\n^[0-9]+$\n\n# pass\n128941247819\n```\n\n**Don't match any characters from range**\n```\n^[^0-9]+$\n\n# fail \n1241\n```\n\n**match an email**\n```\n^[\\d\\w._]+@[a-zA-Z0-9]+\\.[a-z]{2,3}\n```"
+    }
+  ]
+}

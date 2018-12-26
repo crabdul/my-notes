@@ -1,0 +1,17 @@
+{
+  "title": "ESLinting, Prettier and style lint",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](https://medium.freecodecamp.org/integrating-prettier-with-eslint-and-stylelint-99e74fede33f)"
+    },
+    {
+      "type": "markdown",
+      "data": "## ESLint setup for Vue\n\n[source](https://medium.com/@doppelmutzi/eslint-prettier-vue-workflow-46a3cf54332f)\n\n```\nmodule.exports = {\n    // https://github.com/prettier/eslint-config-prettier\n    extends: [\"prettier\"],\n    // https://github.com/prettier/eslint-plugin-prettier\n    plugins: [\"prettier\"],\n    rules: {\n        \"prettier/prettier\": \"error\"\n    }\n};\n```\nAbove is same as below\n```\nmodule.exports = {\n  // https://github.com/prettier/eslint-config-prettier\n  extends: [\"plugin:prettier/recommended\"]\n};\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

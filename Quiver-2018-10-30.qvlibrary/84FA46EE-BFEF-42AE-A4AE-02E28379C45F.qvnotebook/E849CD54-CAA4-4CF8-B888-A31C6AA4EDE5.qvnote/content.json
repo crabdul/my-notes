@@ -1,0 +1,9 @@
+{
+  "title": "DELETE",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```sql\nDELETE from flights \n  WHERE destination = 'Tokyo';\n```"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "<< EOF >>",
+  "cells": [
+    {
+      "type": "code",
+      "language": "c_cpp",
+      "data": "cat << EOF >> ~/.zshrc\n# Add Visual Studio Code (code)\nexport PATH=\"\\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin\"\nEOF"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Migrations",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Summary**\n\n`makemigrations` tracks changes to your models\n`migrate` applies those changes to the database schema, synchronising the models with the db"
+    },
+    {
+      "type": "markdown",
+      "data": "**Conventions**\n\n- django appends `_id` to the foreign key field name"
+    },
+    {
+      "type": "markdown",
+      "data": "**Check health**\n\n`./manage.py check`"
+    },
+    {
+      "type": "markdown",
+      "data": "**See migrations SQL**\n\n```py\npython manage.py sqlmigrate casts 0001\n```\n\n```sql\n\nBEGIN;\n--\n-- Create model Choice\n--\nCREATE TABLE \"casts_choice\" (\"id\" serial NOT NULL PRIMARY KEY, \"choice_text\" varchar(200) NOT NULL, \"votes\" integer NOT NULL);\n--\n-- Create model Question\n--\nCREATE TABLE \"casts_question\" (\"id\" serial NOT NULL PRIMARY KEY, \"question_text\" varchar(200) NOT NULL, \"pub_date\" timestamp with time zone NOT NULL);\n--\n-- Add field question to choice\n--\nALTER TABLE \"casts_choice\" ADD COLUMN \"question_id\" integer NOT NULL;\nCREATE INDEX \"casts_choice_question_id_9f707bb8\" ON \"casts_choice\" (\"question_id\");\nALTER TABLE \"casts_choice\" ADD CONSTRAINT \"casts_choice_question_id_9f707bb8_fk_casts_question_id\" FOREIGN KEY (\"question_id\") REFERENCES \"casts_question\" (\"id\") DEFERRABLE INITIALLY DEFERRED;\nCOMMIT;\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

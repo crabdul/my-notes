@@ -1,0 +1,13 @@
+{
+  "title": "Manually set primary seqeuence key",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Dealing with the primary key sequence is out of sync\n\n```sql\nERROR: duplicate key value violates unique constraint\n```\n\n**Find sequence name**\n```sql\nselect sequence_schema, sequence_name\nfrom information_schema.sequences;\n```\n\n**Set seqeuence id as the number of rows in the table**\n```sql\nSELECT setval('locations_id_seq', (SELECT max(id) FROM locations));\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

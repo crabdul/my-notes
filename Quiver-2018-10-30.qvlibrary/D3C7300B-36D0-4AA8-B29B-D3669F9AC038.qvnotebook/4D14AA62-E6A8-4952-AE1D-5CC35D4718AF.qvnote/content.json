@@ -1,0 +1,9 @@
+{
+  "title": "Querying",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Distinct \n```py\nsession.query(my_class.data).distinct().all()\n```\n\n## Get by Id\n```py\nFlight.query.get(28)\n```\n\n## DELETE FROM flights WHERE id = 28;\n```py\nflight = Flight.query.get(28)\ndb.session.delete(flight)\n```\n\n## COMMIT;\n```py\ndb.sessions.commit()\n```\n\n## SELECT * FROM flights ORDER BY origin DESC;\n```py\nFlight.query.order_by(Flight.origin.desc()).all()\n```\n\n## SELECT * FROM flights WHERE origin LIKE \"%a%\";\n```py\nFlight.query.filter(Flight.origin.like(\"%a%\")\n```\n\n## SELECT * FROM flights WHERE origin IN ('Tokyo', 'Paris');\n```py\nFlight.query.filter(Flight.origin.in_([\"Tokyo\", \"Paris\"]).all()\n```\n\n## SELECT * FROM flights WHERE origin = \"Paris\" OR duration > 500;\n```py\nFlight.query.filter(or_(Flight.origin == \"Paris\", Flight.duration > 500)) \n```\n\n## SELECT * FROM flights JOIN passengers ON flights.id = passengers.flight_id;\n```py\ndb.session.query(Flight, Passenger).filter(Flight.id == Passenger.flight_id).all()\n```"
+    }
+  ]
+}

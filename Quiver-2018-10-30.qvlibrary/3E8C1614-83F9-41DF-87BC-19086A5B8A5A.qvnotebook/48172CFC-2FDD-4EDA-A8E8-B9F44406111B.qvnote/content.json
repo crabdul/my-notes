@@ -1,0 +1,9 @@
+{
+  "title": "lsof",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "`lsof -i :8080`"
+    }
+  ]
+}

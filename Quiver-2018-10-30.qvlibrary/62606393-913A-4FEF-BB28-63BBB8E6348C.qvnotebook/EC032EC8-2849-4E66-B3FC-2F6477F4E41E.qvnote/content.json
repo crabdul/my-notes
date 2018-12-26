@@ -1,0 +1,9 @@
+{
+  "title": "Unpack list of tuples",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```py\n>>> results\n[(1,), (2,), (3,), (4,)]\n```\ninstead of a list of ids. A simple solution is to iterate over the results and\nuse unpacking:\n```py\n>>> [value for value, in results]\n[1, 2, 3, 4]\n```"
+    }
+  ]
+}

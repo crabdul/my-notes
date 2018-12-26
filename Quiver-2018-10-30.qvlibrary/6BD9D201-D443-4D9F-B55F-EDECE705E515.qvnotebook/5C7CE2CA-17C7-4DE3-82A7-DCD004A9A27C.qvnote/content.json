@@ -1,0 +1,10 @@
+{
+  "title": "changing colour ",
+  "cells": [
+    {
+      "type": "code",
+      "language": "css",
+      "data": "      background: linear-gradient(to right, #1e5799 0%,#2ce0bf 19%,#76dd2c 40%,#dba62b 60%,#e02cbf 83%,#1e5799 100%); \n      background-size: 100000px 100%;\n      animation: bg 15s linear infinite ;\n    }\n    \n    @keyframes bg{\n      0%{\n        background-position-x: 0;\n      }\n      \n      100%{\n        background-position-x: 100000px;\n      }\n    }"
+    }
+  ]
+}

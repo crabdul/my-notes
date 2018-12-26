@@ -1,0 +1,17 @@
+{
+  "title": "Method chaining",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Used to simplify scenarios where calling multiple functions are called on the same object consecutively.\n\nReturn the current object at the end of the method\n\n```\nclass Car {\n  constructor(make, model, color) {\n    this.make = make;\n    this.model = model;\n    this.color = color;\n  }\n\n  setMake(make) {\n    this.make = make;\n    // NOTE: Returning this for chaining\n    return this;\n  }\n\n  setModel(model) {\n    this.model = model;\n    // NOTE: Returning this for chaining\n    return this;\n  }\n\n  setColor(color) {\n    this.color = color;\n    // NOTE: Returning this for chaining\n    return this;\n  }\n\n  save() {\n    console.log(this.make, this.model, this.color);\n    // NOTE: Returning this for chaining\n    return this;\n  }\n}\n\nconst car = new Car('Ford','F-150','red')\n  .setColor('pink')\n  .save();\n```\n\n"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

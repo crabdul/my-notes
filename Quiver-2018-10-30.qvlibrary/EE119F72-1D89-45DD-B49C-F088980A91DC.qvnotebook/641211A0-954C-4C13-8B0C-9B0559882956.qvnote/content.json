@@ -1,0 +1,9 @@
+{
+  "title": "_index_Programming",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Fundamentals\n* [Functions](quiver-note-url/E6BDB770-674E-4B98-B95D-5591C3049A87)\n* [Abstract class](quiver-note-url/13607698-E7FC-457B-97DE-D2AAB4D329BC)\n* [Declarative vs. Imperative programming](quiver-note-url/C34A7D62-E334-4556-857A-B418BB3C5D7B)\n\n## Cheatsheets\n* [devhints](quiver-note-url/CE9161FB-717F-4536-B5FF-1E2173F3DBE9)\n\n## Styleguides\n* [All the styleguides](https://github.com/NARKOZ/guides#html)\n\n## Build your own X\n* [List of projects](https://github.com/danistefanovic/build-your-own-x)\n\n## Functional Programming\n* [Mostly Adequate Guide to Functional Programming](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/)\n\n## Code Complete\n* [Someone's notes](https://github.com/mgp/book-notes/blob/master/code-complete.markdown)"
+    }
+  ]
+}

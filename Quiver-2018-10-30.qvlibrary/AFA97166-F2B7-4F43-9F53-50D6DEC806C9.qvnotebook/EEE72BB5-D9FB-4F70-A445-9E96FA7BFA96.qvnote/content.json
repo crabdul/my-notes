@@ -1,0 +1,59 @@
+{
+  "title": "Basic javascript ",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Manipulating arrays</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// remove the last element of an array\n.pop() \n// add element to the end of an array\n.push()\n\n// remove first element of an array\n.shift()\n// Note: can shift element and assign to variable simultaneously\n\n// add element to the start of an array\n.unshift()\n\n\n"
+    },
+    {
+      "type": "text",
+      "data": "<b>Objects&nbsp;<br></b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var testObj = {\n  \"hat\": \"ballcap\",\n  \"shirt\": \"jersey\",\n  \"shoes\": \"cleats\"\n};\n\n// Access using dot operator \nvar hatValue = testObj.hat;      \nvar shirtValue = testObj.shirt;    \n\n// Access using bracket notation\nvar entreeValue = testObj[\"an entree\"];   \nvar drinkValue = testObj[\"the drink\"];  \n\n// Accessing Object properties with Variables \n// Setup\n\nvar testObj = {\n  12: \"Namath\",\n  16: \"Montana\",\n  19: \"Unitas\"\n};\n\nvar playerNumber = 16;       // Change this Line\nvar player = testObj[playerNumber];   // Change this Line\n\n// Add property to object \ntestObj.bark = \"woof\";\n\n// Check if a property exists\n.hasOwnProperty(propname);\n\n// Accessing nested arrays\nvar myPlants = [\n  { \n    type: \"flowers\",\n    list: [\n      \"rose\",\n      \"tulip\",\n      \"dandelion\"\n    ]\n  },\n  {\n    type: \"trees\",\n    list: [\n      \"fir\",\n      \"pine\",\n      \"birch\"\n    ]\n  }  \n];\n\nvar secondTree = myPlants[1].list[1]; // Find object in array by index and access property"
+    },
+    {
+      "type": "text",
+      "data": "<b>Loops</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// For loop\nvar ourArray = [];\n\nfor (var i = 0; i < 5; i++) {\n  ourArray.push(i);\n}\n\n// While loop \nvar ourArray = [];\nvar i = 0;\nwhile(i < 5) {\n  ourArray.push(i);\n  i++;\n}"
+    },
+    {
+      "type": "text",
+      "data": "<b>Generating random numbers&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// Generate random number in specified range \nMath.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;"
+    },
+    {
+      "type": "text",
+      "data": "<b>Sift through text with regular expressions</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// Find word 'and'\n// g - looks for all instances in the string\n// i - ignores caps \nvar expression = /and/gi;  \n\n// return array with matches\nvar matchList = testString.match(expression);\n\n// return match count\nvar matchList = testString.match(expression).length;\n\n// Matching numbers\nvar testString = \"There are 33 cats but 4 dogs.\";\nvar expression = /\\d+/g;  // returns [\"33\",\"4\"]\nvar expression = /\\d/g;  // returns [\"3\",\"3\",\"4\"]\n\n// Whitespace characters \n\" \" - space\n\\r - return\n\\n - newline \n\\t - tab \n\\f - form feed \n\\s - all whitespace \n\n// Invert regular expressions by capatilising \n\n"
+    },
+    {
+      "type": "text",
+      "data": "<b>JSON format&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "json",
+      "data": "var myMusic = [\n  {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  },\n    {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }\n];"
+    }
+  ]
+}

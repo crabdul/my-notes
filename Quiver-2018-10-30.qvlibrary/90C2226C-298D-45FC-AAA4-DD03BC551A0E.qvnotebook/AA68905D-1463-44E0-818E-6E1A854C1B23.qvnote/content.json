@@ -1,0 +1,9 @@
+{
+  "title": "Copy to clipboard",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "- Install Shell Integration: iTerm2 > Install Shell Integration\n- Restart iTerm2\n- Run some command that produces output, e.g. pwd\n- Verify that Edit > Select Output of Last Command is enabled, and that the shortcut Cmd + Shift + A works as well."
+    }
+  ]
+}

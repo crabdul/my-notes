@@ -1,0 +1,9 @@
+{
+  "title": "_index_React",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Intro\n[Introduction](quiver-note-url/C105074C-C839-4963-8AC3-C26A9D2E4F76)\n\n# Fundamentals\n- [Component lifecycle methods](quiver-note-url/A86A966E-084F-4451-92A2-F085DD4BCBCA)\n- [Build your own React](https://engineering.hexacta.com/didact-learning-how-react-works-by-building-it-from-scratch-51007984e5c5)\n* [Controlled and uncontrolled inputs](quiver-note-url/91E7FB41-955E-4387-A331-3B178374B47F)\n* [Basic React patterns](https://krasimir.gitbooks.io/react-in-patterns/content/chapter-07/)\n\n## Advanced Techniques\n* [Advanced React patterns]([React Patterns](quiver-note-url/1D0BF8BD-21BD-48C5-ABBA-9A46BCC7DEF6)\n* [Caching dynamically rendered functions](quiver-note-url/E579756A-B8AB-4A7C-834E-D8C0C476C45F)\n* [Debounce setState](quiver-note-url/8ED7125D-3B90-4B27-9C0F-B1673BDA2ADE)\n* [Time-slicing / Pre-rendering](quiver-note-url/F1BB025C-3C74-4272-9745-007A1582A9AB)\n\n## Architecture\n* [React Architecture and best practices links](https://github.com/markerikson/react-redux-links/blob/master/react-architecture.md)\n\n## Testing\n* [Testing Component Contracts](quiver-note-url/9AD0583E-53E0-4FF5-A30B-923206F16AF2)\n\n## Tutorial series**\n* [Introduction to React](quiver-note-url/C105074C-C839-4963-8AC3-C26A9D2E4F76)\n\n## Debuggin\n* [Debug using chrome tools](https://building.calibreapp.com/debugging-react-performance-with-react-16-and-chrome-devtools-c90698a522ad)\n\n## Styleguide\n* [React-Redux-stylguide](https://github.com/iraycd/React-Redux-Styleguide)\n* [Every day component library](https://everydayhero.github.io/constructicon/)\n\n## Snippets\n* [reactjsexample](https://reactjsexample.com/)\n\n## Libraries\n* [react-spring animation library](https://blog.usejournal.com/why-react-needed-yet-another-animation-library-introducing-react-spring-8212e424c5ce)"
+    }
+  ]
+}

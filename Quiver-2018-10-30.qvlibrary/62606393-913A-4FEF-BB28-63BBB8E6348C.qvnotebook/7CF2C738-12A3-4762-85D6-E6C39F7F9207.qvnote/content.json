@@ -1,0 +1,21 @@
+{
+  "title": "Underscore methods",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](https://www.youtube.com/watch?v=7lmCu8wz8ro)\n\nThere is correspondence between high level syntax/function and an underscore method which implements that syntax or function\n\n```\nlen() -> __len__\nadd() -> __add__\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "## __build_class__\n\nSwapping `__build_class__` with my own to see what is happening.\n\n```python\nold_bc = __build_class__\ndef my_bc(*a, **kw):\n    print('my buildclass->', a, kw)\n    return old_bc(*a, **kw)\n    \nimport builtins\nbuiltins.__build_class__ = my_bc\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

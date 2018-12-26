@@ -1,0 +1,33 @@
+{
+  "title": "Testing Component Contracts ",
+  "cells": [
+    {
+      "type": "text",
+      "data": "A contract defines the expected behaviour of your component and what assumptions are reasoanble to have about its usage.<div>Without a clear contract, your component may be hard to understand.&nbsp;</div><div><br></div><div>Writing tests is a great way to formally define your component’s contract.</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Contributions to the contract</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>what it renders</li><li>the props the component receives&nbsp;</li><li>the state the component holds</li><li>what the component does when the user interacts with it&nbsp;</li><li>values of properties based on props</li></ul><div>less important</div><div><ul><li>the context the component is rendered in&nbsp;</li><li>what the component does when you call methods on its instance (public interface)</li><li>side effects&nbsp;</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>What it’s not worth testing</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<ol><li>Will the test have to duplicate <i>exactly </i>the application code? This will make it brittle (i.e. testing ‘it does what it does’)<br></li><li>Can the effect of this internal detail be described using only the component’s public API</li></ol>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "What is v8?",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Compilers </b>- take source code and turn it into an executable file<div><b>Transpilers </b>- take source code and turn it into another type of source code</div><div><b>Interpreters </b>&nbsp;- compiling + executing. Don’t leave behind an traces of executable files</div>"
+    }
+  ]
+}

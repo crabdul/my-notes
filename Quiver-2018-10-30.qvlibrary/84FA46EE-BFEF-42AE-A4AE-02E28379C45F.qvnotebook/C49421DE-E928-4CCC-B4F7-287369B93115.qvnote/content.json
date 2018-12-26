@@ -1,0 +1,13 @@
+{
+  "title": "JOIN",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Take some tables which are related in some way and group them together\n\n## Types of JOINS\n- JOIN / INNER JOIN - only get things that match\n- LEFT OUTER JOIN - include all rows in the left table even if they don't have matches\n- RIGHT OUTER JOIN\n- FULL OUTER JOIN\n\n## Selecting from two or more tables\n\nNeed to specify how they are related\n\n### Which flight is Alice on?\n```sql\nSELECT origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id WHERE name = 'Alice';\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Seqeulize",
+  "cells": [
+    {
+      "type": "text",
+      "data": "create sequelize"
+    },
+    {
+      "type": "text",
+      "data": "sequelize init"
+    },
+    {
+      "type": "text",
+      "data": "create user model"
+    },
+    {
+      "type": "text",
+      "data": "sequelize model:generate --name User--attributes firstName:string,lastName:string,phone:string,password:string,tosAgreement:boolean"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "<h3>Create sequelize instance and create to a database</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"https://www.youtube.com/watch?v=BpEw1PNdvkg\">https://www.youtube.com/watch?v=BpEw1PNdvkg</a>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "psql\ncreate database app;"
+    },
+    {
+      "type": "text",
+      "data": "we don’t need to associate the tables as none of them are related (at the moment)"
+    },
+    {
+      "type": "text",
+      "data": "<h3>View table fields - Tables with capital letters need escaping</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 0px; font-stretch: normal; font-size: 11px; line-height: normal; font-family: Menlo; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\"><span style=\"font-variant-ligatures: no-common-ligatures\">\\d+ “Users\"&nbsp;</span></p>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Find and Count</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-findAndCount\">http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-findAndCount</a>"
+    }
+  ]
+}

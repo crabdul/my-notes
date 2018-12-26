@@ -1,0 +1,9 @@
+{
+  "title": "Attempt ",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.\n\n```js\nconst attempt = (fn, ...args) => {\n  try {\n    return fn(...args);\n  } catch (e) {\n    return e instanceof Error ? e : new Error(e);\n  }\n};\n```\n\n```js\nvar elements = attempt(function(selector) {\n  return document.querySelectorAll(selector);\n}, '>_>');\nif (elements instanceof Error) elements = []; // elements = []\n```"
+    }
+  ]
+}

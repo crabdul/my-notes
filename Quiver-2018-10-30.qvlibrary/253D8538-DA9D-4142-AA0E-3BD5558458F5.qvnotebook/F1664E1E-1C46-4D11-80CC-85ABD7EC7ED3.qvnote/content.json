@@ -1,0 +1,9 @@
+{
+  "title": "_index_TS",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Setup \n* [Setting up React wit TS](quiver-note-url/39D99A8E-A796-4D78-B0C2-FAB8903FFD2C)\n* [Instantiating a tsconfig.json file](quiver-note-url/5DB0B614-1453-4C19-B085-B357F0D17586)"
+    }
+  ]
+}

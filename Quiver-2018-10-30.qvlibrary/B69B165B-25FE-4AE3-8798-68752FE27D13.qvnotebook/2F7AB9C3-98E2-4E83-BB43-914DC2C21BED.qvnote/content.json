@@ -1,0 +1,25 @@
+{
+  "title": "Splitting Reducer Logic",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Why we split reducers</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<ol><li>small utility functions containing some reusable chunk of logic that is needed in multiple places&nbsp;</li><li>functions for handling a specific update case, which often need parameters other than the typical `(state, action)` pair</li><li>functions which handle <i>all </i>updates for a given slice of state. These functions do generally have the typical (state, action) pair&nbsp;</li></ol>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Types of reducers&nbsp;</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li><b>reducer </b>- any function with the signature (state, action) —&gt; newState (ie any function that could be used as an argument to `Array.prototype.reduce`</li><li><b>Root reducer - </b>the reducer function that is actually passed as the first argument to `createStore`. This is the only part of the reducer logic that must have the `(state, action) —&gt; newState` signature&nbsp;<br></li><li><b>Slice reducer </b>- a reducer that is being used to handle updates to one specific slice of the state tree&nbsp;</li><li><b>Higher-order reducer </b>- a function that takes a reducer as an argument, and/or returns a new reducer function as a result (such as `combineReducers` or `redux-undo`</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

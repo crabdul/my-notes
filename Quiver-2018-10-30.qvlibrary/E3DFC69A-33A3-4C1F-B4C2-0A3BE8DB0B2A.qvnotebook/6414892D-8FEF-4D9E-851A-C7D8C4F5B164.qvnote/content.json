@@ -1,0 +1,25 @@
+{
+  "title": "django.db",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## ForeignKey relationship\n\nOne row in `Manufacturer` table may be linked to many rows in table `Car`\n\nbut one row in table `Car` is linked to only one row in table `Manufacturer`\n\n```py\nfrom django.db import models\n\nclass Car(models.Model):\n    manufacturer = models.ForeignKey(\n        'Manufacturer',\n        on_delete=models.CASCADE,\n    )\n    # ...\n\nclass Manufacturer(models.Model):\n    # ...\n    pass\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "## ManyToMany relationship\n\n### Both objects must exist in the db\n\nBehind the scenes, django creates an intermediary join table (an invisible \"through\" model) to represent the many-to-many relationship.\n\nThus, the primary keys for the source model and target model are required.\n\nThe following fields are generated:\n\n* `id` - primary key of the relation\n* `<containing_model>_id` - id of the model that declares the `ManyToManyField`\n* `<other_model>_id` - id of the model that the ManyToMany field points to\n\n### Pizza example\n\nThe `Pizza` is the source model that declares the `ManyToManyField` relationship.\n\n```py\n\nclass Pizza(models.Model):\n\n    name = models.CharField(max_length=30)\n    toppings = models.ManyToManyField('Topping')\n\n    def __str__(self):\n        return self.name\n\n\nclass Topping(models.Model):\n\n    name = models.CharField(max_length=30)\n\n    def __str__(self):\n        return self.name\n```\n\n#### Retrieving from `ManyToManyField`\n\n```\nhawaiian_pizza.toppings.all()\n```\n\n##### `related_name`\n\nProvide a more intuitive name for retrieving stuff in that field\n\n```py\nclass Pizza(models.Model):\n    ...\n    toppings = models.ManyToManyField('Topping', related_name='pizzas')\n```\n\n```py\npineapple.pizzas.all()\n```\n\nOtherwise `_set` notation is used by default\n\n```py\npineapple.pizza_set.all()\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "## Meta data\n\n```py\nclass Meta:\n    verbose_name = 'Post'\n    verbose_name_plural = 'Posts'\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "## String representation\n\n```py\nfrom django.utils.encoding import smart_text\n\ndef __str__(self):\n    return smart_text(self.title)\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

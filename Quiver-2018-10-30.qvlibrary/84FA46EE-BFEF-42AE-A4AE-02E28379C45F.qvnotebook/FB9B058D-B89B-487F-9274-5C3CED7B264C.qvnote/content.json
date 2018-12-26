@@ -1,0 +1,13 @@
+{
+  "title": "Data Types",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**SERIAL** - Used for creating a unique identifier column. Create an integer column and assign it's default value to be generated from a sequence generator.\n\n**VARCHAR** - String with variable length\n\n**ENUM** - Static, ordered list of values"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

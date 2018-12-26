@@ -1,0 +1,17 @@
+{
+  "title": "Threads and processes",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```python\nfrom concurrent.futures import ThreadPoolExecutor as PoolExecutor\nfrom concurrent.futures import ProcessPoolExecutor as PoolExecutor\n\nimport http.client\nimport socket\n\ndef get_it(url):\n    try:\n\n        connection = http.client.HTTPSConnection(url, timeout=2)\n\n        connection.request(\"GET\", \"/\")\n\n        response = connection.getresponse()\n\n        return response.read()\n\n    except socket.timeout:\n\n        print('error')\n\nurls = [\n    \"www.google.com\",\n    \"www.youtube.com\",\n    \"www.wikipedia.org\",\n    \"www.reddit.com\",\n    \"www.httpbin.org\"\n]\n\nwith PoolExecutor(max_workers=4) as executor:\n    for _ in executor.map(get_it, urls):\n        print(_)\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "[source](https://dev.to/rhymes/how-to-make-python-code-concurrent-with-3-lines-of-code-2fpe?utm_source=Newsletter+Subscribers&utm_campaign=1abf706b21-EMAIL_CAMPAIGN_2018_11_25_11_48&utm_medium=email&utm_term=0_d8f11d5d1e-1abf706b21-154454237)dna"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

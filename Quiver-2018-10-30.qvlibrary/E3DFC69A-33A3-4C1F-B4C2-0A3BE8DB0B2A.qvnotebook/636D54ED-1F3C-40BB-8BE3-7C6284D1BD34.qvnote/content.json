@@ -1,0 +1,23 @@
+{
+  "title": "views.py",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>importing&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "from django.shortcuts import render, get_object_or_404"
+    },
+    {
+      "type": "text",
+      "data": "<h3>404</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "    album = get_object_or_404(Album, pk=album_id)\n    \n    \n    try: \n        album = Album.objects.get(pk=album_id)\n    except Album.DoesNotExist:\n        raise Http404('Albums does not exist')"
+    }
+  ]
+}

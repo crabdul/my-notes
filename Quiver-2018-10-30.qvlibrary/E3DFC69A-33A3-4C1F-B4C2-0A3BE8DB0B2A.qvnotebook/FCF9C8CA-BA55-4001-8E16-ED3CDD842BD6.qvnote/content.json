@@ -1,0 +1,28 @@
+{
+  "title": "ManyToMany Manager",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "from django.db import models\n\nclass Publication(models.Model):\n    title = models.CharField(max_length=30)\n\n    def __str__(self):\n        return self.title\n\n    class Meta:\n        ordering = ('title',)\n\nclass Article(models.Model):\n    headline = models.CharField(max_length=100)\n    publications = models.ManyToManyField(Publication)\n\n    def __str__(self):\n        return self.headline\n\n    class Meta:\n        ordering = ('headline',)"
+    },
+    {
+      "type": "text",
+      "data": "<div>Article objects have access to their related Publication objects:</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "\n>>> a1.publications.all()\n<QuerySet [<Publication: The Python Journal>]>\n>>> a2.publications.all()\n<QuerySet [<Publication: Highlights for Children>, <Publication: Science News>, <Publication: Science Weekly>, <Publication: The Python Journal>]>\n"
+    },
+    {
+      "type": "text",
+      "data": "<div>Publication objects have access to their related Article objects:</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "\n>>> p2.article_set.all()\n<QuerySet [<Article: NASA uses Python>]>\n>>> p1.article_set.all()\n<QuerySet [<Article: Django lets you build Web apps easily>, <Article: NASA uses Python>]>\n>>> Publication.objects.get(id=4).article_set.all()\n<QuerySet [<Article: NASA uses Python>]>"
+    }
+  ]
+}

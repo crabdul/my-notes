@@ -1,0 +1,9 @@
+{
+  "title": "QUERIES CLAUSES",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## LIMIT\n\n## ORDER BY\n\n## GROUP BY\n\n## HAVING\n```sql \nSELECT\n  customer_id,\n  SUM (amount)\nFROM\n  payment\nGROUP BY\n  customer_id\nHAVING\n  SUM (amount) > 200;\n```"
+    }
+  ]
+}

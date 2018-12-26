@@ -1,0 +1,9 @@
+{
+  "title": "_index_django",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Setup\n\n- [PostgreSQL installation](quiver-note-url/B3C87C35-A109-4816-9154-AF9433AA6EAB)\n\n## Routing\n\n- [django.urls](quiver-note-url/8531B73B-7A46-463C-869B-1290F8D9E62D)\n\n## Models\n- [django.db](quiver-note-url/6414892D-8FEF-4D9E-851A-C7D8C4F5B164)\n- [Migrations](quiver-note-url/CA1D2E34-9F4F-441B-9A6D-4E57C944C6E0)\n- [How model queries work in Django](quiver-note-url/BDBBB256-26D0-4766-B6D4-8E66FFAFD378)\n- [Model Manager](quiver-note-url/ACA3FEC3-25F4-49F2-82F0-CCC8AEB417F0)\n\n## Forms\n\n- [django.form.Forms](quiver-note-url/D119DDF6-BB14-49C1-8C7E-B477B5DD50B5)\n- [django.forms.ModelForm](quiver-note-url/A13127E5-891C-4848-970E-759381CA58BC)\n\n## Views\n\n- [django.views](quiver-note-url/C6ABE67C-824C-42CD-A02C-ABD187AC0C6E)\n\n## Packages\n\n- [django.contrib.auth](quiver-note-url/8AEBFEC6-4BA8-462B-88B2-34C64A9CDB2A)\n- [django.contrib.auth.decorators](quiver-note-url/125C8841-90AA-43BE-AD99-4272D5EA5EE9)\n\n## Shell\n\n- [Shell snippets](quiver-note-url/5BFDB123-A834-4A9D-96BE-C31A4A69AB8F)\n\n## Testing \n\n- [django.test](quiver-note-url/8516A9C6-38BC-4299-8126-1B88A6061C06)\n\n## Celery\n\n- [Celery](quiver-note-url/8E8DD24D-9AFE-4257-83B5-A4E0CAD9B047)\n\n## Deploying\n\n- [Deploy to Heroku](quiver-note-url/856077CE-A269-44C8-92A4-DBB7A40247B0)"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "SQLAlchemy Flask",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Import/context issue\n[link](https://stackoverflow.com/questions/9692962/flask-sqlalchemy-import-context-issue/9695045#9695045)\n\n```py\n# apps.members.models\nfrom flask_sqlalchemy import SQLAlchemy\n\ndb = SQLAlchemy()\n\nclass Member(db.Model):\n    # fields here\n    pass\nAnd then in your application setup you can call init_app:\n\n# apps.application.py\nfrom flask import Flask\nfrom apps.members.models import db\n\napp = Flask(__name__)\n# later on\ndb.init_app(app)\n```"
+    }
+  ]
+}

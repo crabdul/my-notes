@@ -1,0 +1,13 @@
+{
+  "title": "React Styleguidist",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Add external css</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"https://github.com/styleguidist/react-styleguidist/blob/master/docs/Cookbook.md#how-to-add-custom-javascript-and-css-or-polyfills\">https://github.com/styleguidist/react-styleguidist/blob/master/docs/Cookbook.md#how-to-add-custom-javascript-and-css-or-polyfills</a>"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Production web application",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[Web architecture](https://engineering.videoblocks.com/web-architecture-101-a3224e126947)\n[What's in a production web application](https://stephenmann.io/post/whats-in-a-production-web-application/)"
+    }
+  ]
+}

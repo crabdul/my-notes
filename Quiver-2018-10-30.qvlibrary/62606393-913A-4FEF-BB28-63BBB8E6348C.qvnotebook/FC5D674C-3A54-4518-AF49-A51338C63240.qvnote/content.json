@@ -1,0 +1,9 @@
+{
+  "title": "_index_python",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Fundamentals\n* [Attributes and Methods](quiver-note-url/477BF831-9476-4992-8067-7045D0259032)\n* [Unpack list of tuples](quiver-note-url/EC032EC8-2849-4E66-B3FC-2F6477F4E41E)\n* [Wrapper Decorators](quiver-note-url/F551FD06-BD02-4377-AC2A-337FF171287A)\n* [Underscore methods](quiver-note-url/7CF2C738-12A3-4762-85D6-E6C39F7F9207)\n\n# Standard Library\n* [datetime](quiver-note-url/AC2C0852-0DFB-408A-8607-DBE849F7049B)\n* [Threads and processes](quiver-note-url/D75D61C3-1E50-4A22-8084-36A907DC2E06)"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Animated background",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<a href=\"https://codepen.io/altafhpatel/pen/jAwrdj\">https://codepen.io/altafhpatel/pen/jAwrdj</a>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "@keyframes animatedBackground {\n  from {\n    background-position: 0 0;\n  }\n  to {\n    background-position: 100% 0;\n  }\n}\n\n#animate-area {\n  margin: 0px;\n  padding: 0px;\n  width: 100%;\n  height: 400px;\n  background-image: url(https://davidwalsh.name/demo/bg-clouds.png);\n  background-position: 0px 0px;\n  background-repeat: repeat-x;\n  animation: animatedBackground 40s linear infinite;\n}\n/*------- for more tutorials visit www.twoclock.com*/"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Deploying karai music",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "First set up a dokku server on digital ocean.\n\nssh into the server and add a new user\n\n```\nadduser crabdul\n```\n\nEnter password.\n\nYou can add a name but the other fields are unneccesary.\n\nNext we grant ourselves to the sudo group to give ourselves root prvilieges in order to complete administrative tasks\n\nSince I already have a ssh public key setup and specified so at setup, I needed to manually install the key. \n\n```\ncat ~/.ssh/id_rsa.pub\n```\n\nCreate a `.ssh` directory at root.\nRestrict permissions with `chmod 700 ~/.ssh`\nCreate a `.ssh/authorized_keys` file and paste the key inside\nThen restrict permissions using `chmod 600 ~/.ssh/authorized_keys`"
+    },
+    {
+      "type": "markdown",
+      "data": "## DB settings\n\n```\ndefine('DB_NAME', 'karai_music_db');\n\n/** MySQL database username */\ndefine('DB_USER', 'crabdul');\n\n/** MySQL database password */\ndefine('DB_PASSWORD', 'bc-wk-ec-wb-fb');\n\n/** MySQL hostname */\ndefine('DB_HOST', 'mysql');\n\n/** Database Charset to use in creating database tables. */\ndefine('DB_CHARSET', 'utf8');\n\n/** The Database Collate type. Don't change this if in doubt. */\ndefine('DB_COLLATE', '');\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "**Deploying app**\n\n```\n git remote add dokku dokku@karaimusic.co.uk:karai-music\n ```\n \n **Adding ssh keys for github**\n ```\n sudo dokku ssh-keys:add github ~/.ssh/id_rsa.pub\n ```\n \n **Push to master to deploy**\n ```\n git push dokku master\n ```"
+    }
+  ]
+}

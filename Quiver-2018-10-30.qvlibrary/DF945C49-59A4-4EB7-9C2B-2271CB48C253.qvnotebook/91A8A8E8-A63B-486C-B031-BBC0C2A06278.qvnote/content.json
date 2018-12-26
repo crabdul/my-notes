@@ -1,0 +1,9 @@
+{
+  "title": "Compose",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Perform right-to-left composition**\n\nUse `Array.prototype.reduce()` to perform right-to-left function composition. The last function can accept one or more arguments; the remaining functions must be unary.\n\n```js\nconst compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)))\n```\n\nExample\n```js\nconst add5 = x => x + 5\nconst multiply = (x, y) => x * y\nconst multiplyAndAdd5 = compose(\n    add5,\n    multiply\n)\nmultiplyAndAdd5(5, 2) // 15\n```"
+    }
+  ]
+}

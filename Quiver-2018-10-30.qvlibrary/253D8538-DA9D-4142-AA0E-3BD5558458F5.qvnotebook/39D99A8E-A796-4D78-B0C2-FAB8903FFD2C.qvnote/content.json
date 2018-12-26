@@ -1,0 +1,9 @@
+{
+  "title": "Setting up React wit TS",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)\n\n## awesome-typescript-loader\nhelps Webpack compile your TS code using the TS's standard config file ts.config.json.\n\n## source-map-loader\nuses sourcemap output from TS and informs Webpack when it creates its own sourcemap.\nHelps debug the transpiled code as if you were debugging the original."
+    }
+  ]
+}

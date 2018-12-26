@@ -1,0 +1,9 @@
+{
+  "title": "Index",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# PostgreSQL\n\n## Setup\n\nRun psql\n```bash\n\"/Applications/Postgres.app/Contents/Versions/10/bin/psql\"\n```\n\n- [pgcli](quiver-note-url/7E3103BD-4216-4732-B218-A891E91E6D96)\n\n## Topics\n- [Data Types](quiver-note-url/FB9B058D-B89B-487F-9274-5C3CED7B264C)\n- [CREATE TABLE](quiver-note-url/C0E338A7-EC3E-497E-8BBB-72AE3DBFD619)\n- [INSERT INTO](quiver-note-url/AA9D0611-25B2-47A1-9477-6E9A81B9CE26)\n- [UPDATE](quiver-note-url/87A38854-62E1-4866-AEEF-5A28D9647795)\n- [DELETE](quiver-note-url/E849CD54-CAA4-4CF8-B888-A31C6AA4EDE5)\n- [JOIN](quiver-note-url/C49421DE-E928-4CCC-B4F7-287369B93115)\n\n## Extra resources\n- [PostgreSQL Exercises](quiver-note-url/2C8D3012-CB41-4511-94E8-6BB03330E968)"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Model Manager",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Manager is the interface through which database query operations are made for a Django model.<div><br></div><div>By default, Django adds a Manager with the name <b>objects </b>to every Django model class.</div>"
+    }
+  ]
+}

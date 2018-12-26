@@ -1,0 +1,9 @@
+{
+  "title": "Run promises in series",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Runs an array of promises in series**\n\nuse `Array.prototype.reduce()` to create a promise chain, where each promise returns the next promise when resolved\n\n\n```js\nconst runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve())\n\n```\n\nExample\n```js\nconst delay = d => new Promise(r => setTimeout(r, d));\nrunPromisesInSeries([() => delay(1000), () => delay(2000)]); // Executes each promise sequentially, taking a total of 3 seconds to complete\n```"
+    }
+  ]
+}

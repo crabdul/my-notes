@@ -1,0 +1,9 @@
+{
+  "title": "Abstract class",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Used as a basis for creating specific objects that conform to its protocol.\n\nAbstract classes cannot be instantiated.\n\nLike a contract. If a subclass inhertis from this class then it must provide implementations for the abstract methods."
+    }
+  ]
+}

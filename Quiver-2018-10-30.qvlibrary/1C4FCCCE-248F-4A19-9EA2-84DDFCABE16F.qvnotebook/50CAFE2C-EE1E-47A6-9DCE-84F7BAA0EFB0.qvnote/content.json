@@ -1,0 +1,9 @@
+{
+  "title": "Avoid export default",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<a href=\"https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html\">https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html</a>"
+    }
+  ]
+}

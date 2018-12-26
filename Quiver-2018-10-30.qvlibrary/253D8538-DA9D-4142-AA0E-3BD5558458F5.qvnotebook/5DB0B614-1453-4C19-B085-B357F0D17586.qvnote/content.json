@@ -1,0 +1,9 @@
+{
+  "title": "Instantiating a tsconfig.json file",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```js\nnpx tsc --init --rootDir src --outDir lib --esModuleInterop --resolveJsonModule --lib es6,dom --module commonjs\n```"
+    }
+  ]
+}

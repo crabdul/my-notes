@@ -1,0 +1,9 @@
+{
+  "title": "django.test",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Run the test**\n\n```py\n$ python manage.py test polls\n```\n\n```py\nimport datetime\n\nfrom django.test import TestCase\nfrom django.utils import timezone\n\nfrom .models import Question\n\n\nclass QuestionModelTests(TestCase):\n\n    def test_was_published_recently_with_future_question(self):\n        \"\"\"\n        was_published_recently() returns False for questions whose pub_date\n        is in the future.\n        \"\"\"\n        time = timezone.now() + datetime.timedelta(days=30)\n        future_question = Question(pub_date=time)\n        self.assertIs(future_question.was_published_recently(), False)\n```\n\n## Mocking\n\n[article](https://craiglabenz.me/p/mocking-things-python-and-specifically-django/)"
+    }
+  ]
+}

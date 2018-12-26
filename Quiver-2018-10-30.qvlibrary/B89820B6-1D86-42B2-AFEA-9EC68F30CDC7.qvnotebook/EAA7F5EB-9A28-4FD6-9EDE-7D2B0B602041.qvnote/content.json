@@ -1,0 +1,13 @@
+{
+  "title": "Defer loading off JS libraries",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(33, 33, 33); font-family: Roboto, sans-serif; font-size: 16px; font-variant-ligatures: normal; orphans: 2; widows: 2;\">Many JavaScript libraries, such as JQuery, are used to enhance the page to add additional interactivity, animations, and other effects. However, many of these behaviors can be safely added after the above-the-fold content is rendered. Investigate making such JavaScript asynchronous or defer its loading.</span>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"https://developers.google.com/speed/docs/insights/BlockingJS\">https://developers.google.com/speed/docs/insights/BlockingJS</a>"
+    }
+  ]
+}

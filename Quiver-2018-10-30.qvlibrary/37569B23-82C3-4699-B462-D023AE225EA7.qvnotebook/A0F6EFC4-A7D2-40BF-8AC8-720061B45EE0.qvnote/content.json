@@ -1,0 +1,33 @@
+{
+  "title": "Automated Nginx Reverse Proxy for Docker",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[Source](http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/)"
+    },
+    {
+      "type": "markdown",
+      "data": "A reverse proxy server is a server that typically sits in front of other web servers in order to provide additional functionality that the web servers may not provide themselves.\n\nFor example, a reverse proxy can provide SSL termination, load balancing, request routing, caching, compression, or even A/B testing"
+    },
+    {
+      "type": "markdown",
+      "data": "## Why use a reverse proxy with Docker\nDocker containers are assigned random IPs and ports which makes addressing them much more complicated from a client perspective. \n\nBy default, the IPs and ports are private to the host and cannot be accessed externally unless they are bound to the host.\n\nBinding the container to the hosts port can prevent multiple containers from running on the same host.\n\nFor example, only one container can bind to port 80 at a time. This also complicates rolling out new versions of the container without downtime since the old container must be stopped before the new one is started."
+    },
+    {
+      "type": "markdown",
+      "data": "## Generating reverse proxy configs\nSetting up a reverse proxy configuration can be complicated when containers are started and stopped. \n\nFortunately, Docker provides a remote API to inspect containers and access their IP, Ports and other configuration meta-data. \nIt also provides a real-time events API that can be used for notifications when containers are started and stopped. \nThese APIs can be used to generate a reverse proxy config automatically.\n\n[docker-gen](https://github.com/jwilder/docker-gen) is a small utility that uses these APIs and exposes container meta-data to templates. Templates are rendered and an optional notification command can be run to restart the service. \n\nUsing **docker-gen**, we can generate Nginx config files automatically and reload nginx when they change."
+    },
+    {
+      "type": "markdown",
+      "data": "## Nginx reverse proxy for Docker"
+    },
+    {
+      "type": "markdown",
+      "data": "Example nginx template for generating a reverse proxy configuration for docker containers using virtual hosts for routing.\n\n```scheme\nupstream demo1.localhost {\n    server 172.17.0.4:5000;\n    server 172.17.0.3:5000;\n}\n\nserver {\n    gzip_types text/plain text/css application/json application/x-javascript\n               text/xml application/xml application/xml+rss text/javascript;\n    \n    server_name demo1.localhost;\n    \n    location / {\n        proxy_pass http://demo.localhost;\n        include /etc/nginx/proxy_params;\n    }   \n}\n\nupstream demo2.localhost {\n    server 172.17.0.5:5000;\n}\n\nserver {\n        gzip_types text/plain text/css application/json application/x-javascript\n               text/xml application/xml application/xml+rss text/javascript;\n              \n        server_name demo2.localhost;\n        \n        location / {\n            proxy_pass http://demo2.localhost;\n            include /etc/nginx/proxy_params;\n        }\n}\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

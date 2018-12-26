@@ -1,0 +1,9 @@
+{
+  "title": "_index_Vim",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Cheatsheet\n* [Vim tips](quiver-note-url/9FBA3AB1-A557-42D6-898E-8BF2D4D6E1A1)\n* [Vim cheatsheet](quiver-note-url/12BA868F-C866-4418-95C2-0AA665B5B5AA)\n![wjtaaxh.png](quiver-image-url/4543DF908FCED644217411681969D6E9.png =809x629)\n\n## Example vimrc\n\n- [A good vimrc](https://dougblack.io/words/a-good-vimrc.html)\n\n## Resources for parts\n\n- [fzf, ag, ack](https://statico.github.io/vim3.html)\n- [ale](https://github.com/w0rp/ale)\n- [js](https://javascriptplayground.com/vim-for-javascript/)\n- [ctags](http://arjanvandergaag.nl/blog/combining-vim-and-ctags.html)(https://andrew.stwrt.ca/posts/vim-ctags/)\n- [ctags,git](https://tbaggery.com/2011/08/08/effortless-ctags-with-git.html)\n\n## Books\n\n- [Learn VimScript the hard way](http://learnvimscriptthehardway.stevelosh.com/)\n"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "VS Code shortcuts",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Selection shortcuts\n\n`shft` Select\n`shft + optn` Select block (on same line)\n`shft + optn + ↕️` Copy line below/above\n`shft + cmd` Select line\n\n`optn + cmd` Multi-line select\n\n`cmd + shft + l` Select all instances\n\n`ctrl + space` Intellisense\n\n`F2` Rename refactoring\n\n`cmd + . ` Refactor via extracting\n\n`optn + cmd + [ or ]` Code folding"
+    }
+  ]
+}

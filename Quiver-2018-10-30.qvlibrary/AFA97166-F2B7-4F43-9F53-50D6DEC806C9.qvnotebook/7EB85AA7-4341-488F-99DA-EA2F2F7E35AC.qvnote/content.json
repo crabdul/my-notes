@@ -1,0 +1,62 @@
+{
+  "title": "Lerna",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h2>Turning repository into a collection of private npm packages</h2>"
+    },
+    {
+      "type": "text",
+      "data": "Articles:<div>-&nbsp;<a href=\"https://medium.com/trabe/monorepo-setup-with-lerna-and-yarn-workspaces-5d747d7c0e91\">https://medium.com/trabe/monorepo-setup-with-lerna-and-yarn-workspaces-5d747d7c0e91</a></div><div>-&nbsp;<a href=\"https://blog.logrocket.com/the-monorepo-putting-code-in-its-place-e073b3eb6295\" rel=\"nofollow\" style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); color: rgb(3, 102, 214); text-decoration: none; font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px; font-variant-ligatures: normal; orphans: 2; widows: 2;\">https://blog.logrocket.com/the-monorepo-putting-code-in-its-place-e073b3eb6295</a>&nbsp;</div>"
+    },
+    {
+      "type": "text",
+      "data": "<ul class=\"postList\" style=\"margin: 29px 0px 0px; padding: 0px; list-style: none none; counter-reset: post 0; color: rgba(0, 0, 0, 0.843137); font-family: medium-content-sans-serif-font, -apple-system, system-ui, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 20px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\"><li name=\"9744\" id=\"9744\" class=\"graf graf--li graf-after--p\" style=\"margin-left: 30px; margin-bottom: 14px; --baseline-multiplier: 0.17; font-family: medium-content-serif-font, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; line-height: 1.58; letter-spacing: -0.003em;\"><a href=\"https://lernajs.io/\" data-href=\"https://lernajs.io/\" class=\"markup--anchor markup--li-anchor\" rel=\"noopener\" target=\"_blank\" style=\"background-color: transparent; color: inherit; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.54); background-image: linear-gradient(rgba(0, 0, 0, 0.68) 50%, rgba(0, 0, 0, 0) 50%); background-repeat: repeat-x; background-size: 2px 0.1em; background-position: 0px 1.07em;\"><span class=\"markup--strong markup--li-strong\" style=\"font-weight: 700;\">Lerna</span></a> — Sits on top of npm and manually symlinks local packages into your node_modules folder. Provides a lot of tooling for publishing individual sub-packages.</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<ul class=\"postList\" style=\"margin: 29px 0px 0px; padding: 0px; list-style: none none; counter-reset: post 0; color: rgba(0, 0, 0, 0.843137); font-family: medium-content-sans-serif-font, -apple-system, system-ui, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 20px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\"><li name=\"cd65\" id=\"cd65\" class=\"graf graf--li graf-after--li\" style=\"margin-left: 30px; margin-bottom: 0px; --baseline-multiplier: 0.17; font-family: medium-content-serif-font, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; line-height: 1.58; letter-spacing: -0.003em;\"><a href=\"https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/\" data-href=\"https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/\" class=\"markup--anchor markup--li-anchor\" rel=\"noopener\" target=\"_blank\" style=\"background-color: transparent; color: inherit; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.54); background-image: linear-gradient(rgba(0, 0, 0, 0.68) 50%, rgba(0, 0, 0, 0) 50%); background-repeat: repeat-x; background-size: 2px 0.1em; background-position: 0px 1.07em;\"><span class=\"markup--strong markup--li-strong\" style=\"font-weight: 700;\">Yarn Workspaces</span> </a>— A fairly new yarn feature, similar to lerna, but with a leaner feature set and a focus on performance</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>So what were the challenges?</h2>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>Packages must declare it’s devDependencies locally if they want to use binaries in their npm scripts</li><li>npm scripts should be executable using Lerna in the monorepo root and directly inside each package. Necessary when dealing with scripts that run in watch mode.&nbsp;</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Designations</h2>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>Yarn handles the dependencies&nbsp;</li><li>Lerna handles tasks that affect multiple packages</li><li>one folder per package inside packages</li><li>each package defines only its runtime packages</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Shared tools</h2><ul class=\"postList\" style=\"margin: 38px 0px 0px; padding: 0px; list-style: none none; counter-reset: post 0; color: rgba(0, 0, 0, 0.843137); font-family: medium-content-sans-serif-font, -apple-system, system-ui, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 20px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\"><li name=\"2668\" id=\"2668\" class=\"graf graf--li graf-after--li\" style=\"margin-left: 30px; margin-bottom: 14px; --baseline-multiplier: 0.17; font-family: medium-content-serif-font, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; line-height: 1.58; letter-spacing: -0.003em;\">Each package contains the required configuration files for the tooling. Each file extends a common base configuration (we use&nbsp;<a href=\"https://babeljs.io/\" data-href=\"https://babeljs.io/\" class=\"markup--anchor markup--li-anchor\" rel=\"noopener nofollow\" target=\"_blank\" style=\"background-color: transparent; color: inherit; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.54); background-image: linear-gradient(rgba(0, 0, 0, 0.68) 50%, rgba(0, 0, 0, 0) 50%); background-repeat: repeat-x; background-size: 2px 0.1em; background-position: 0px 1.07em;\">Babel</a>,&nbsp;<a href=\"https://facebook.github.io/jest/\" data-href=\"https://facebook.github.io/jest/\" class=\"markup--anchor markup--li-anchor\" rel=\"noopener nofollow\" target=\"_blank\" style=\"background-color: transparent; color: inherit; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.54); background-image: linear-gradient(rgba(0, 0, 0, 0.68) 50%, rgba(0, 0, 0, 0) 50%); background-repeat: repeat-x; background-size: 2px 0.1em; background-position: 0px 1.07em;\">Jest</a>&nbsp;and&nbsp;<a href=\"https://eslint.org/\" data-href=\"https://eslint.org/\" class=\"markup--anchor markup--li-anchor\" rel=\"noopener nofollow\" target=\"_blank\" style=\"background-color: transparent; color: inherit; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.54); background-image: linear-gradient(rgba(0, 0, 0, 0.68) 50%, rgba(0, 0, 0, 0) 50%); background-repeat: repeat-x; background-size: 2px 0.1em; background-position: 0px 1.07em;\">ESlint</a>&nbsp;+&nbsp;<a href=\"https://prettier.io/\" data-href=\"https://prettier.io/\" class=\"markup--anchor markup--li-anchor\" rel=\"noopener nofollow\" target=\"_blank\" style=\"background-color: transparent; color: inherit; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.54); background-image: linear-gradient(rgba(0, 0, 0, 0.68) 50%, rgba(0, 0, 0, 0) 50%); background-repeat: repeat-x; background-size: 2px 0.1em; background-position: 0px 1.07em;\">Prettier</a>&nbsp;to compile, test and lint/prettify the code).</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "Instead of polluting the root package.json with all the tooling we define another package to host the tools"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "{\n  \"name\": \"awesome-tools\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Awesome Tools\",\n  \"files\": [\n    \"babel.config.js\",\n    \"eslint.config.js\",\n    \"jest.config.js\",\n    \"prettier.config.js\"\n  ],\n  \"scripts\": {\n    \"test\": \"./task test\"\n  },\n  \"dependencies\": {\n    \"@babel/cli\": \"7.0.0-beta.47\",\n    \"@babel/core\": \"7.0.0-beta.47\",\n    \"@babel/node\": \"7.0.0-beta.47\",\n    \"@babel/preset-env\": \"7.0.0-beta.47\",\n    \n    \"more-deps\": \"...\"\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

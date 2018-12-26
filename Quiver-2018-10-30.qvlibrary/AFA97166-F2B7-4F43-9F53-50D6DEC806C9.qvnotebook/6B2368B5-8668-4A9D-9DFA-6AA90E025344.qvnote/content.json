@@ -1,0 +1,9 @@
+{
+  "title": "Higher order javascript ",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Callback functions&nbsp;</b><div>passing a function definition as an argument to another function&nbsp;</div><div>function is “called back” at some point inside the containing function’s body&nbsp;</div>"
+    }
+  ]
+}

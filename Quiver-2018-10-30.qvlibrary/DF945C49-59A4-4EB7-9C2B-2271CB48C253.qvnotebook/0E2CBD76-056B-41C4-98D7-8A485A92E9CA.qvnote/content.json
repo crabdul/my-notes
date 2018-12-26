@@ -1,0 +1,9 @@
+{
+  "title": "Bind",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Creates a function that invokes `fn` with a given context\n\n```js\nconst bind = (fn, context) => (...args) => fn.apply(context, ...args)\n```\n\nExample\n```js\nconst greet = (greeting, punctuation) => {\n    return greeting + ' ' + this.user + punctuation\n}\n\nconst person = { user: 'fred' }\nconst boundGreeting = bind(greet, person)\nconsole.log(boundGreeting('hi', '!') // 'hi fred!'"
+    }
+  ]
+}

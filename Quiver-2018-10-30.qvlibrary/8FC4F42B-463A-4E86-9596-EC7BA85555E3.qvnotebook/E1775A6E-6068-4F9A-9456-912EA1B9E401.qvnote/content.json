@@ -1,0 +1,9 @@
+{
+  "title": "Console methods",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "1. **`console.time()`**\n\n```js\nconsole.time(\"myTimer\");\n...\n// codes for which duration is to be calculated\n...\nconsole.timeEnd(\"myTimer\");\n```\n\n2. **`console.count()`**\n\nTakes an optional argument to help distinguish between different calls\n\n```js\nvar name = \"alan\";\nfunction hello(){\n   console.count(name);\n}\nhello();\nname = \"tom\";\nhello();\nhello();\n// Output:\n// alan: 1 \n// tom: 1 \n// tom: 2\n\n```\n\n3. **`console.trace`**\n\n```js\nfunction fun1(){\n    fun2();\n}\nfunction fun2(){\n    fun3();\n}\nfunction fun3(){\n    console.trace();\n}\nfun1();\n// Output:\n// fun3 debugger eval code:8:1\n// fun2 debugger eval code:5:1 \n// fun1 debugger eval code:2:1 \n// <anonymous> debugger eval code:10:1</anonymous>\n```\n\n4. **`console.group`**"
+    }
+  ]
+}

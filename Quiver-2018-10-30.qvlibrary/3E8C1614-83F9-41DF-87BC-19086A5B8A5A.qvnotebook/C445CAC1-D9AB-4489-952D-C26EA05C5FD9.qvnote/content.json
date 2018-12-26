@@ -1,0 +1,9 @@
+{
+  "title": "_index_Linux",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Quick commands\nRedo last command as root\n```bash\nsudo !!\n```\n\nFix a command that you messed up\n```bash\nfc\n```\n\nOpen an editor to run a command\n```bash\nctrl + x + e\n```\n\nCreate a super fast ram disk\n```bash\nmkdir -p /mnt/ram\nmount -t tmpfs tmpfs /mnt/ram -o size=8192M\n```\n\nIntercept stdout and log to file\n```bash\ncat file | tee -a log.txt\n```\n\n## Unix utilities and built-ins\n* [cat](quiver-note-url/7167FA40-0FBA-4F05-8BB9-E711D349E75C)\n* [ps](quiver-note-url/D57CA4B5-63B2-48D8-8F59-87E46405F21F)\n* [scp](quiver-note-url/69BAA989-E289-4153-B0DE-60099E217D6D)\n* [lsof](quiver-note-url/48172CFC-2FDD-4EDA-A8E8-B9F44406111B)\n* [<< EOF >>](quiver-note-url/B09B5646-49EE-489B-BE78-EDF788F919FE)\n* [openssl](quiver-note-url/8D3479D8-904F-4443-8A7D-64527E7CD11A)\n* [ssh-keygen](quiver-note-url/EADFFB69-3A95-455D-86EB-D15A12C78EC7)\n## Bash \n* [Conditionals](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)\n* [Bash cheatsheet](quiver-note-url/3D4C9913-3BBB-429F-80CF-6EE896B4F7ED)\n\n## Tools\n* [rebound-cli](https://github.com/shobrook/rebound)\n\n## Cheatsheet\n* [Bash cheatsheet](https://github.com/remigiusz-suwalski/programming-cheatsheets/blob/master/bash/bash.pdf)"
+    }
+  ]
+}

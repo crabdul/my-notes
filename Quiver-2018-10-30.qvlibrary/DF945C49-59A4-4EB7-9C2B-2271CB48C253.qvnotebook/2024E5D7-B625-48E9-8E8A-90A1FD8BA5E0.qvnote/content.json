@@ -1,0 +1,9 @@
+{
+  "title": "Immutably rename object keys",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```js\nrenameProp = (\n    oldProp,\n    newProp,\n{ [oldProp]: old, ...others }\n) => ({\n    [newProp]: old,\n    ...others\n})\n```"
+    }
+  ]
+}

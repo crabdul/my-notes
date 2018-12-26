@@ -1,0 +1,9 @@
+{
+  "title": "Debounce setState",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Create a generic way of calling setState while debouncing it**\n\nWrite so that debounceReduce function has a cumulative state\n\n```js\n\nimport debounce from 'lodash.debounce'\n\n// https://github.com/jashkenas/underscore/issues/310#issuecomment-2510502\nfunction debounceReduce(func, wait, reducer) {\n  var allargs,\n      context,\n      wrapper = debounce(function() {\n          func(allargs);\n      }, wait);\n      return function() {\n          context = this;\n          allargs = reducer.apply(context, [allargs,  Array.prototype.slice.call(arguments,0)]);\n          wrapper();\n      };\n}\n\n```\n\n```js\n\ndebounceSetState = debounceReduce(\n    arg => this.setState(arg),\n    300,\n    function(acc, args) { return acc ?\n        {log: acc.log.concat(args[0].log), done: args[0].done} :\n        {log: args[0].log, done: args[0].done}\n    }\n)\n\n```"
+    }
+  ]
+}

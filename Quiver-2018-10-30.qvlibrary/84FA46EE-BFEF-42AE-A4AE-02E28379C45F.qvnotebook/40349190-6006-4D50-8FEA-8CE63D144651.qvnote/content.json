@@ -1,0 +1,9 @@
+{
+  "title": "Change data type from varchar to integer",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```sql\nALTER TABLE passengers ALTER COLUMN flight_id TYPE integer USING (f\n           light_id::integer);\n```"
+    }
+  ]
+}

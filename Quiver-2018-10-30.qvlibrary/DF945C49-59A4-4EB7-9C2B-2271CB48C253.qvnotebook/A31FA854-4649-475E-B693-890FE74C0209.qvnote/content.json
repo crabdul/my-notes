@@ -1,0 +1,13 @@
+{
+  "title": "Defer / Delay",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Defers invoking a function until the current call stack has cleared**\n\n```js\nconst defer = (fn, ...args) => setTimeout(fn, 1, ...args)\n```\n\nExample\n```js\ndefer(console.log, 'a')\nconsole.log('b'); // logs 'b' then 'a'\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "**Invokes the provided function after the `wait` milliseconds**\n\n```js\nconst delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);\n```\n\nExample\n```js\ndelay(\n  function(text) {\n    console.log(text);\n  },\n  1000,\n  'later'\n); // Logs 'later' after one second.\n```"
+    }
+  ]
+}

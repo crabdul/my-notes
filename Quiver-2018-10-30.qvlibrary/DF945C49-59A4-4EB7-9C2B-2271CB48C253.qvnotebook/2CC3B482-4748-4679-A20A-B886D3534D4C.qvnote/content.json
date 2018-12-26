@@ -1,0 +1,49 @@
+{
+  "title": "Clean Hash Map without side-effects",
+  "cells": [
+    {
+      "type": "text",
+      "data": "When creating a map using object literal, the map inherits properties from Object by default. This is equiavalent to&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "Object.create(Object.prototype)"
+    },
+    {
+      "type": "text",
+      "data": "By specifiying"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "null"
+    },
+    {
+      "type": "text",
+      "data": "as it’s prototype, the map has absolutely no properties"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "const map = Object.create(null);"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Example</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "const dirtyMap = {}\nconst cleanMap = Object.create(null)\n\nconst key;\nfor(key in dirtyMap) {\n  if (dirtyMap.hasOwnProperty(key)) {\n    console.log(key + ': ' + dirtyMap[key])\n  }\n}\n\nfor(key in cleanMap) {\n  console.log(key + ': ' + cleanMap[key])\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

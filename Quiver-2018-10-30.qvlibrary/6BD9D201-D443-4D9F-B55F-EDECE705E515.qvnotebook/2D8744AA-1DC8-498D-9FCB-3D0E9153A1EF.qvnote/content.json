@@ -1,0 +1,13 @@
+{
+  "title": "Flex-box",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Flex-box cheat-sheet</h3><div><a href=\"https://yoksel.github.io/flex-cheatsheet/\">https://yoksel.github.io/flex-cheatsheet/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Flex-box responsive&nbsp;</h3><a href=\"https://css-tricks.com/dont-overthink-flexbox-grids/\">https://css-tricks.com/dont-overthink-flexbox-grids/</a><br>"
+    }
+  ]
+}

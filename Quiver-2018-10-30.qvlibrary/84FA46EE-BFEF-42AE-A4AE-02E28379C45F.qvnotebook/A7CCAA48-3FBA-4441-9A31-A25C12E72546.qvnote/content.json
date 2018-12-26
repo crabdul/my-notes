@@ -1,0 +1,9 @@
+{
+  "title": "UPDATE + JOIN",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Updating table with column from another table\n```sql\nUPDATE flights\nSET origin_id = locations.id\nFROM locations \nWHERE flights.origin = locations.name\n```"
+    }
+  ]
+}

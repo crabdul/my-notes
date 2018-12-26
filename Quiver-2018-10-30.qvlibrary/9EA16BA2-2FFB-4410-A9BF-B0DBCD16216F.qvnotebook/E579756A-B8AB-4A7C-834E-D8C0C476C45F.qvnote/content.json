@@ -1,0 +1,9 @@
+{
+  "title": "Caching dynamically rendered functions",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```js\nclass SomeComponent extends React.PureComponent {\n\n  // Each instance of SomeComponent has a cache of click handlers\n  // that are unique to it.\n  clickHandlers = {};\n\n  // Generate and/or return a click handler,\n  // given a unique identifier.\n  getClickHandler(key) {\n\n    // If no click handler exists for this unique identifier, create one.\n    if (!Object.prototype.hasOwnProperty.call(this.clickHandlers, key)) {\n      this.clickHandlers[key] = () => alert(key);\n    }\n    return this.clickHandlers[key];\n  }\n\n  render() {\n    return (\n      <ul>\n        {this.props.list.map(listItem =>\n          <li key={listItem.text}>\n            <Button onClick={this.getClickHandler(listItem.text)} />\n          </li>\n        )}\n      </ul>\n    );\n  }\n}\n```"
+    }
+  ]
+}

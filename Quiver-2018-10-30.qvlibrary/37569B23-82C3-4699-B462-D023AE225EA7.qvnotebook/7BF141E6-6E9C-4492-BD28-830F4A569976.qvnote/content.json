@@ -1,0 +1,25 @@
+{
+  "title": "Commands",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Access container's shell\n`docker exec -it container_name bash` "
+    },
+    {
+      "type": "markdown",
+      "data": "## Rebuild image created from Dockerfile\n`docker-compose build --no cache NAME_OF_SERVICE`"
+    },
+    {
+      "type": "markdown",
+      "data": "**Database dump**\n```\ndocker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

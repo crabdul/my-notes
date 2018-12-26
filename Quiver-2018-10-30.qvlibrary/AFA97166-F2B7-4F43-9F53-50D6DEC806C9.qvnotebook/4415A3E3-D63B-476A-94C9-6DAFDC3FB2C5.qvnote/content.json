@@ -1,0 +1,48 @@
+{
+  "title": "Arrays",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Sorts values according to the returned values&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "    // Array.prototype.sort()\n    // 3. Sort the inventors by birthdate, oldest to youngest\n    const ordered = inventors.sort(function(a, b) {\n      if(a.year > b.year){\n        return 1;\n      } else {\n        return -1;\n      }\n    });\n\n    console.log(ordered);\n    \n// Using ternary operator \nconst ordered = inventors.sort((a, b) => a.year > b.year ? 1: -1);\n"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Reducing total loops</h3><div><ul><li><em style=\"box-sizing: inherit; color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(241, 241, 241);\">function(total,currentValue, index,arr)</em><br></li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "    const totalYears = inventors.reduce((total, inventor) => {\n      return total + (inventor.passed - inventor.year);\n    }, 0)"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Website scraping&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "    const category = document.querySelector('.mw-category');\n    const links = Array.from(category.querySelectorAll('a'));\n    // const links = [...category.querySelectorAll('a')];\n\n    const de = links\n    .map(link => link.textContent)\n    .filter(streetName => streetName.includes('de'));"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Sorting</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<div style=\"color: rgb(187, 187, 187); background-color: rgb(40, 44, 52); font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 18px; white-space: pre;\"><div>    <span style=\"color: #d55fde;\">const</span> <span style=\"color: #ef596f;\">alpha</span> <span style=\"color: #aab1c0;\">=</span> <span style=\"color: #ef596f;\">people</span>.<span style=\"color: #2bbac5;\">sort</span>(<span style=\"color: #d55fde;\">function</span>(<span style=\"color: #ef596f;font-style: italic;\">lastOne</span>, <span style=\"color: #ef596f;font-style: italic;\">nextOne</span>) {</div><div>        <span style=\"color: #d55fde;\">const</span> [<span style=\"color: #ef596f;\">aLast</span>, <span style=\"color: #ef596f;\">aFirst</span>] <span style=\"color: #aab1c0;\">=</span> <span style=\"color: #ef596f;\">lastOne</span>.<span style=\"color: #2bbac5;\">split</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">, </span><span style=\"color: #98c378;\">'</span>);</div><div>        <span style=\"color: #d55fde;\">const</span> [<span style=\"color: #ef596f;\">bLast</span>, <span style=\"color: #ef596f;\">bFirst</span>] <span style=\"color: #aab1c0;\">=</span> <span style=\"color: #ef596f;\">nextOne</span>.<span style=\"color: #2bbac5;\">split</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">, </span><span style=\"color: #98c378;\">'</span>);</div><div>        <span style=\"color: #d55fde;\">return</span> <span style=\"color: #ef596f;\">aLast</span> <span style=\"color: #aab1c0;\">&gt;</span> <span style=\"color: #ef596f;\">bLast</span> <span style=\"color: #d55fde;\">?</span> <span style=\"color: #d8985f;\">1</span> <span style=\"color: #d55fde;\">:</span> <span style=\"color: #2bbac5;\">-</span><span style=\"color: #d8985f;\">1</span>;</div><div>    })</div><div>    <span style=\"color: #e5c07b;\">console</span>.<span style=\"color: #52adf2;\">log</span>(<span style=\"color: #ef596f;\">alpha</span>);</div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Reduce exercise&nbsp;</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<div style=\"color: rgb(187, 187, 187); background-color: rgb(40, 44, 52); font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 18px; white-space: pre;\"><div>    <span style=\"color: #5c6370;font-style: italic;\">//</span><span style=\"color: #5c6370;\"> 8. Reduce Exercise</span></div><div>    <span style=\"color: #5c6370;font-style: italic;\">//</span><span style=\"color: #5c6370;\"> Sum up the instances of each of these</span></div><div>    <span style=\"color: #d55fde;\">const</span> <span style=\"color: #ef596f;\">data</span> <span style=\"color: #aab1c0;\">=</span> [<span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">car</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">car</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">truck</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">truck</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">bike</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">walk</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">car</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">van</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">bike</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">walk</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">car</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">van</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">car</span><span style=\"color: #98c378;\">'</span>, <span style=\"color: #98c378;\">'</span><span style=\"color: #89ca78;\">truck</span><span style=\"color: #98c378;\">'</span> ];</div><br><div>    <span style=\"color: #d55fde;\">const</span> <span style=\"color: #ef596f;\">transportation</span> <span style=\"color: #aab1c0;\">=</span> <span style=\"color: #ef596f;\">data</span>.<span style=\"color: #52adf2;\">reduce</span>(<span style=\"color: #d55fde;\">function</span>(<span style=\"color: #ef596f;font-style: italic;\">obj</span>, <span style=\"color: #ef596f;font-style: italic;\">item</span>) {</div><div>        <span style=\"color: #d55fde;\">if</span>(<span style=\"color: #2bbac5;\">!</span><span style=\"color: #ef596f;\">obj</span>[<span style=\"color: #ef596f;\">item</span>]) {</div><div>          <span style=\"color: #ef596f;\">obj</span>[<span style=\"color: #ef596f;\">item</span>] <span style=\"color: #aab1c0;\">=</span> <span style=\"color: #d8985f;\">0</span>;</div><div>        }</div><div>        <span style=\"color: #ef596f;\">obj</span>[<span style=\"color: #ef596f;\">item</span>]<span style=\"color: #aab1c0;\">++</span>;</div><div>        <span style=\"color: #d55fde;\">return</span> <span style=\"color: #ef596f;\">obj</span>;</div><div>    },{})</div><br><div>    <span style=\"color: #e5c07b;\">console</span>.<span style=\"color: #52adf2;\">log</span>(<span style=\"color: #ef596f;\">transportation</span>);</div></div>"
+    }
+  ]
+}

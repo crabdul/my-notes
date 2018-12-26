@@ -1,0 +1,9 @@
+{
+  "title": "Hoisting",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>Understand that variable and function declarations are hoisted to the top of their available scope. Understand that function expressions are not hoisted.</b></div>"
+    }
+  ]
+}

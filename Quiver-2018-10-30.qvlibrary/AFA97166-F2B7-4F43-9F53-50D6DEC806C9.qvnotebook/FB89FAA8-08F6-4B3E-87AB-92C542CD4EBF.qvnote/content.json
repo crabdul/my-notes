@@ -1,0 +1,27 @@
+{
+  "title": "Algorithms ",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Reverse string&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function reverseString(str) {\n  return str.split('').reverse().join('');\n}"
+    },
+    {
+      "type": "text",
+      "data": "<b>Factorialise&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function factorialize(num) {\n if (num < 0) \n    return -1;\n  else if (num == 0) \n    return 1;\n  else {\n    return (num * factorialize(num - 1));\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

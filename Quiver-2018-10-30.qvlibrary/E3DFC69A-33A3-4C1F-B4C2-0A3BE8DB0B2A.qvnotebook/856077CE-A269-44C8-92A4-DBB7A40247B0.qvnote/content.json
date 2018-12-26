@@ -1,0 +1,9 @@
+{
+  "title": "Deploy to Heroku",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](https://tutorial-extensions.djangogirls.org/en/heroku/)\n\n## Deploy Redis + Celery\n\n1. Setup Procfile:\n    ```\n    web: gunicorn cfehome.wsgi --log-file -\n    worker: celery -A cfehome worker\n    beat: celery -A cfehome beat -S django\n    ```\n\n2. Setup `production.py`:\n    ```\n    INSTALLED_APPS = [\n         # ... default apps\n        'django_celery_beat',\n        'django_celery_results',\n        ## your apps\n    ]\n    CELERY_BROKER_URL=os.environ['REDIS_URL']\n    CELERY_RESULT_BACKEND=os.environ['REDIS_URL']\n\n    CELERY_ACCEPT_CONTENT = ['application/json']\n    CELERY_TASK_SERIALIZER = 'json'\n    CELERY_RESULT_SERIALIZER = 'json'\n    CELERY_TIMEZONE = TIME_ZONE\n    ```\n\n3. Setup [heroku-redis](https://elements.heroku.com/addons/heroku-redis):\n    ```\n    heroku addons:create heroku-redis:hobby-dev\n    ```\n\n4. Upgrade Heroku Account to `Professional`\n\n5. Update `requirements.txt`\n    ```\n    pip freeze > requirements.txt\n    ```\n6. Commit, Push & Migrate\n    ```\n    git add --all\n    git commit -m \"Add Celery + Redis to Django\"\n    git pus heroku master\n    heroku run python manage.py migrate\n    ```\n\n7. Scale Up Services:\n    ```\n    heroku ps:scale web=1 worker=1 beat=1\n    ```\n\n8. Restart Server:\n    ```\n    heroku restart\n    ```"
+    }
+  ]
+}

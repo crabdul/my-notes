@@ -1,0 +1,55 @@
+{
+  "title": "Arrays",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>map</h3>"
+    },
+    {
+      "type": "text",
+      "data": "applies a function against each element in an array"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "const array = [1,2,3,4,5,6];\nconst square = x => Math.pow(x, 2);\nconst squares = array.map(square);"
+    },
+    {
+      "type": "text",
+      "data": "<h3>reduce</h3>"
+    },
+    {
+      "type": "text",
+      "data": "applies a function against an accumulator and each element in an array"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "const array = [1,2,3,4,5,6];\nconst sum = (x, y) => x + y;\nconst array_sum = array.reduce(sum, 0);"
+    },
+    {
+      "type": "text",
+      "data": "<h3>filter</h3>"
+    },
+    {
+      "type": "text",
+      "data": "filters elements based on a boolean function"
+    },
+    {
+      "type": "text",
+      "data": "<h3>every</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<div>Got an array and want to test if a given condition is met in every element?</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>some</h3>"
+    },
+    {
+      "type": "text",
+      "data": "test if atleast one element matches our boolean function"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Dokku",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](http://dokku.viewdocs.io/dokku/deployment/application-deployment/)\n\n```\n# from your local machine\n# SSH access to github must be enabled on this host\ngit clone git@github.com:heroku/ruby-rails-sample.git\n```\n\n**Create the app**\n```\n# on the Dokku host\ndokku apps:create ruby-rails-sample\n```\n\n**Create the backing services**\n```\n# on the Dokku host\n# install the postgres plugin\n# plugin installation requires root, hence the user change\nsudo dokku plugin:install https://github.com/dokku/dokku-postgres.git\n\n# create a postgres service with the name rails-database\ndokku postgres:create rails-database\n```\n\n**Linking backing services to applications**\n```\n# on the Dokku host\n# each official datastore offers a `link` method to link a service to any application\ndokku postgres:link rails-database ruby-rails-sample\n```\n\n**Deploy the app**\n```\n# from your local machine\n# the remote username *must* be dokku or pushes will fail\ncd ruby-rails-sample\ngit remote add dokku dokku@dokku.me:ruby-rails-sample\ngit push dokku master\n```\n\n\nhttps://dev.mikamai.com/2014/05/12/a-modern-workflow-for-wordpress-using-docker-and/\n\nhttps://cheat.readthedocs.io/en/latest/django/dokku_postgres.html\n\nhttps://www.smartdomotik.com/2016/01/28/move-wordpress-site-to-dokku-server/\n\nhttps://www.broculos.net/2015/12/dokku-how-to-deploy-vanilla-php.html#.WZ6PHutNw8o\n\nhttps://www.broculos.net/2015/12/dokku-deploying-static-html-site.html\n\nhttps://dev.mikamai.com/2014/05/12/a-modern-workflow-for-wordpress-using-docker-and/"
+    }
+  ]
+}

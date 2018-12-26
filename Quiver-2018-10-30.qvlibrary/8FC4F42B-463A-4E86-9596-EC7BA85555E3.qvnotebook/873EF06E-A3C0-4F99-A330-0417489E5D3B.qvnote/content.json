@@ -1,0 +1,9 @@
+{
+  "title": "WebSockets",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Libraries\n\n## [ws](https://github.com/websockets/ws) \n\n### Client (Browser, before bundling)\n\n```js\nconst WebSocket = require('ws');\n \nconst ws = new WebSocket('ws://www.host.com/path');\n \nws.on('open', function open() {\n  ws.send('something');\n});\n \nws.on('message', function incoming(data) {\n  console.log(data);\n});\n```\n\n### Server (Node.JS)\n\n```js\nconst WebSocket = require('ws');\n \nconst wss = new WebSocket.Server({ port: 8080 });\n \nwss.on('connection', function connection(ws) {\n  ws.on('message', function incoming(message) {\n    console.log('received: %s', message);\n  });\n \n  ws.send('something');\n});\n```\n\n## [SocketCluster](https://github.com/SocketCluster/socketcluster)"
+    }
+  ]
+}

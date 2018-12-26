@@ -1,0 +1,9 @@
+{
+  "title": "cat",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "`cat >file` Write to file in terminal\n`cat >>file` Append to end of file"
+    }
+  ]
+}

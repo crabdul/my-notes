@@ -1,0 +1,9 @@
+{
+  "title": "Partial",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Creates a function that invokes `fn` with `partials` prepended to the arguments it receives**\n\nUse the spread operator to prepend `partials` to the list of arguments of `fn`\n\n```js\nconst partial = (fn, ...partials) => (...args) => fn(...partials, ...args)\n```\n\nExample\n```js\nconst greet = (greeting, name) => greeting + ' ' + name + '!';\nconst greetHello = partial(greet, 'Hello');\ngreetHello('John'); // 'Hello John!'\n```"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Shell snippets",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Display related child object set**\n\n```py\nparent.child_set.all()\n```\n\n**Create new child related to parent**\n\n```py\nparent.choice_set.create(name='Jim')\n```\n\n**Filter children**\n\n```py\nparent.choice_set.filter(name__startswith='J')\n```"
+    }
+  ]
+}

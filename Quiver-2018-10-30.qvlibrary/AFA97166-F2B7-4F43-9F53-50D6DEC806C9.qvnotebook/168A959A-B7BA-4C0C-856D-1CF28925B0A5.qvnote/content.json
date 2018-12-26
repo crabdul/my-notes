@@ -1,0 +1,61 @@
+{
+  "title": "JavaScript Libraries",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>lossy compressor</h3><div><a href=\"https://compressor.io/compress\">https://compressor.io/compress</a><br></div><h3><br></h3><h3>Minimal Youtube Player</h3><a href=\"https://github.com/sampotts/plyr\">https://github.com/sampotts/plyr</a>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Thumbnail grabber</h3><div><a href=\"http://boingboing.net/\">http://boingboing.net/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Match Height&nbsp;</h3><div><a href=\"https://github.com/liabru/jquery-match-height\">https://github.com/liabru/jquery-match-height</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>Centering things</b></h3><div><a href=\"https://www.w3.org/Style/Examples/007/center.en.html\">https://www.w3.org/Style/Examples/007/center.en.html</a><b><br></b></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Resize Image</h3><div><a href=\"http://resizeimage.net/\">http://resizeimage.net/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Grid Layout&nbsp;</h3><div>masonry grid layout&nbsp;</div><div>good but resizes&nbsp;</div><div><a href=\"https://masonry.desandro.com/\">https://masonry.desandro.com/</a><br></div><br><div><a href=\"http://salvattore.com/\">http://salvattore.com/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"https://michalsnik.github.io/aos/\">https://michalsnik.github.io/aos/</a>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Carousel</h2><div><a href=\"https://pawelgrzybek.com/siema/\">https://pawelgrzybek.com/siema/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Compress images&nbsp;</h2><div><a href=\"https://github.com/photopea/UPNG.js\">https://github.com/photopea/UPNG.js</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Tilt&nbsp;</h2><div><a href=\"https://gijsroge.github.io/tilt.js/\">https://gijsroge.github.io/tilt.js/</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Text effects&nbsp;</h2><div><a href=\"https://speckyboy.com/css-javascript-text-animation-snippets/\">https://speckyboy.com/css-javascript-text-animation-snippets/</a><br></div><br>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Fit Videos</h3><div><a href=\"http://fitvidsjs.com/\">http://fitvidsjs.com/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Lazy Load youtube videos&nbsp;</h2><div><a href=\"https://www.newmediacampaigns.com/blog/lazyytjs-a-jquery-plugin-to-lazy-load-youtube-videos\">https://www.newmediacampaigns.com/blog/lazyytjs-a-jquery-plugin-to-lazy-load-youtube-videos</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Bootstrap custom grid&nbsp;</h2><div><a href=\"https://v4-alpha.getbootstrap.com/layout/grid/\">https://v4-alpha.getbootstrap.com/layout/grid/</a><br></div><div><a href=\"https://www.gizra.com/content/custom-breakpoint-bootstrap-sass/\">https://www.gizra.com/content/custom-breakpoint-bootstrap-sass/</a><br></div><div><br></div>"
+    }
+  ]
+}

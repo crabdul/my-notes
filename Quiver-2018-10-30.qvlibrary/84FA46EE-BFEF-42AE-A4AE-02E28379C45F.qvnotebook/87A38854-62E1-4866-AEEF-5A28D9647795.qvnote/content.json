@@ -1,0 +1,13 @@
+{
+  "title": "UPDATE",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "### Syntax\n```psql\n[ WITH [ RECURSIVE ] with_query [, ...] ]\nUPDATE [ ONLY ] table [ [ AS ] alias ]\n    SET { column = { expression | DEFAULT } |\n          ( column [, ...] ) = ( { expression | DEFAULT } [, ...] ) } [, ...]\n    [ FROM from_list ]\n    [ WHERE condition | WHERE CURRENT OF cursor_name ]\n    [ RETURNING * | output_expression [ [ AS ] output_name ] [, ...] ]\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "```sql\nUPDATE flights \n  SET duration = 430 \n  WHERE origin = 'New York'\n  AND destination = 'London';\n```"
+    }
+  ]
+}

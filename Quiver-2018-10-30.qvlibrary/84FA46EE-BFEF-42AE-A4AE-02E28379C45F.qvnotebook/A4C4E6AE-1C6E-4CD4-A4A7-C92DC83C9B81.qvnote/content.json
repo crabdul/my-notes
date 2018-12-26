@@ -1,0 +1,13 @@
+{
+  "title": "Database URLS",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```bash\ndialect+driver://username:password@host:port/database\n```\ne.g\n```bash\nengine = create_engine('postgresql://scott:tiger@localhost/mydatabase')\n\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "[source](https://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls)"
+    }
+  ]
+}

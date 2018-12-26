@@ -1,0 +1,289 @@
+{
+  "title": "Javascript: Understanding the Weird Parts",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>The Global environment and The Global Object&nbsp;</h3><h3><span style=\"font-weight: normal;\"><span style=\"font-size: 17px;\">For the case of browsers, the execution context (which acts as a wrapper) creates the </span><span style=\"font-size: 17px;\">global object</span><span style=\"font-size: 17px;\"> which is the window.</span></span></h3><div>The <b>global object (window)&nbsp;</b>is accessible.</div>"
+    },
+    {
+      "type": "code",
+      "language": "matlab",
+      "data": "a \n\"Hello World!\"\n\nwindow.a\n\"Hello World!\"\n\nthis.a\n\"Hello World!\""
+    },
+    {
+      "type": "text",
+      "data": "<h3>Creating and “Hoisting”</h3><div>before code is executed line-by-line, memory space is allocated for variables and functions</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "b();\nconsole.log();\n\nvar a = \"Hello World!\";\n\nfunction b() {\n  console.log(\"called b!\")\n};\n\n// returns \n// \"called b!\"\n// undefined"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Undefined&nbsp;</h3><div>special value when a variable is not initialised</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Execution stack</h3><div>Javascript is synchronous</div><div>events in the queue are added to the execution context once the execution stack is empty</div><div><img src=\"quiver-image-url/776FE03099BB943A736E65831F561CAD.png\" alt=\"Screen Shot 2017-11-12 at 16.20.33.png\" width=\"1392\" height=\"971\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>null</h3><div>use null to represent nothing</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Coercion&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "1 + '2'\n// output: 12\n// 1 coerced into '1'"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// left-to-right associativity \n3 < 2 < 1 \n// same as \nfalse < 1 \n// false coerced into 0\n>> true"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "Number(null)\n>> 0\nNumber(undefined)\n>> NaN"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "\"3\" == 3\n>> true"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "Boolean(\"\")\n>> false\nBoolean(undefined)\n>> false\nBoolean(null)\n>> false"
+    },
+    {
+      "type": "text",
+      "data": "<h3>using boolean logic to check for existence</h3><div>good for checking if variables exist</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var a;\n\n// if a is not null, undefined\nif (a) {\n  // something\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Default values&nbsp;</h3><div>name var declared in <i>greet </i>execution context&nbsp;</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function greet(name) {\n  console.log(\"hello \" + name);\n}\n\ngreet();\n\n>> hello undefined"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Coercion and OR operator&nbsp;</h3><div>|| operator will return first value that can be coerced to true</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "0 || 1 \n>> 1 \n\nnull || \"hello\"\n>> \"hello\"\n\nfunction greet(name) {\n  name = name || '<Your name here>'\n  console.log(\"Hello \" + name);\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Objects and the Dot</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var person = new Object();\nperson.name = \"Tony\";\nperson.address = new Object():\nperson.address.street = \"Mendora Road\";\nperson.address.city = \"London\";"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Object literal&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var person = { \n  firstname: \"Tony\", \n  lastname: \"Montana\"\n};"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function greet(person) {\n  console.log(\"Hi \"+person.firstname);\n}\n\n// passing object literal as argument \ngreet({\n  firstname: 'Mary',\n  lastname: 'Doe'\n})"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Faking namespaces&nbsp;</h3><div>javascript doesn’t have namespaces&nbsp;</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// using object as a container to avoid namespace collisions\nvar english = {};\nvar spanish = {};\n\nenglish.greet = \"Hello!\";\nspanish.greet = \"Hola!\""
+    },
+    {
+      "type": "text",
+      "data": "<h3>JSON&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// Convert into JSON format \nJSON.stringify({firstname: 'Mary', female: true})\n// Convert from JSON format \nvar jsonValue = JSON.parse('{firstname\": \"Mary\", \"female\": true}');"
+    },
+    {
+      "type": "text",
+      "data": "<h3>First Class Functions&nbsp;</h3><div><b><i>functions are objects with invocable code</i></b></div><div><ul><li>assign them to varibales</li><li>pass them around</li><li>create them on the fly<br></li></ul><div><img src=\"quiver-image-url/0E0EFD9C387A1D6F360DAE09F8108942.png\" alt=\"Screen Shot 2017-11-12 at 20.22.02.png\" width=\"1664\" height=\"866\"><br></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function greet() {\n  console.log('hi');\n}\n\ngreet.language = 'english';\nconsole.log(greet.language);\n\n>> english"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Function statements and function expressions</h3><div><h3><span style=\"font-size: 17px; font-weight: normal;\">function expressions aren’t hoisted</span></h3></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// function expression statement returns a object / value\nvar anonymousGreet = function() {\n  console.log('hi');\n}\n\n// function statement\nfunction greet() {\n  console.log('hi');\n}\n\nanonymousGreet();"
+    },
+    {
+      "type": "text",
+      "data": "<h3>by name, by reference</h3><div>b = a point to copies of the value for primitive types</div><div><br></div><div>b = a points to the same object&nbsp;</div><div><br></div><div><b><i>equals operator sets up a new memory space</i></b></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>this&nbsp;</h3><div>sub-function’s <b><i>this</i></b> execution context&nbsp;points to global object (window)</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var c = {\n  name: \"The c object\",\n  log: function() {\n    this.name = \"Updated c object\";\n    console.log(this);\n    \n    var setname = function(newname) {\n      this.name = newname;\n    }\n    \n    setname('Updated again! The c object');\n    console.log(this);\n  }\n}\n\nc.log();\n>> \"Updated c object\"\n>> \"Updated c object\""
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var c = {\n  name: \"The c object\",\n  log: function() {\n    var self = this;\n    \n    self.name = \"Updated c object\";\n    console.log(this);\n    \n    var setname = function(newname) {\n      self.name = newname;\n    }\n    \n    setname('Updated again! The c object');\n    console.log(this);\n  }\n}\n\nc.log();\n>> \"Updated c object\"\n>> \"Updated again! The c object\""
+    },
+    {
+      "type": "text",
+      "data": "<h3>‘arguments' and spread</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function greet(firstname, lastname, language){\n  language = language || 'en';\n  \n  if (arguments.length === 0) {\n    console.log('Missing parameters');\n    return;\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>whitespace</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var \n  // firstname \n  firstname,\n   \n  // last name \n  lastname"
+    },
+    {
+      "type": "text",
+      "data": "<h3>IIFEs</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// think of it as defining and then invoking straightaway\nvar greeting = function(name) {\n  return \"Hello \" + name;\n}('John');\n\nconsole.log(greeting);"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// Engine knows that grouping operator is only used for expressions\n// executing code on the fly\n(function(name) {\n  return 'Hello';\n}());"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Closure&nbsp;</h3><div><i>gives current value rather than value at creation</i></div><div><i><br></i></div><div><i style=\"font-weight: bold;\">free variables - </i>variables outside a function which you have access to</div><div><img src=\"quiver-image-url/DCCCA41CAA5145EDB39FA552B8202192.png\" alt=\"Screen Shot 2017-11-12 at 22.01.17.png\" width=\"1355\" height=\"695\"><br></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function buildFunctions() {\n\n    var arr = [];\n\n    for(var i = 0; i < 3; i++) {\n        arr.push(\n            function() {\n                console.log(i);\n            }\n        )\n    }\n    return arr;\n}\n\nvar fs = buildFunctions();\n\nfs[0]();\nfs[1]();\nfs[2]();\n\n>> 3\n>> 3 \n>> 3"
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/D61DD43300F8D08F95B8F00F54FBEFDF.png\" alt=\"Screen Shot 2017-11-16 at 15.09.33.png\" width=\"472\" height=\"366\"><div>variables from execution contexts that have finished hang around&nbsp;</div><div><br></div><div>going up the scope chain to the outer environment, it finds that i = 3</div><div><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Let&nbsp;</h3><div>variables have local scope within block</div>"
+    },
+    {
+      "type": "text",
+      "data": "<div style=\"background-color: rgb(40, 44, 52); font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 18px; white-space: pre;\"><div><font color=\"#c678dd\"># create new execution context </font></div><div style=\"color: rgb(187, 187, 187);\"><span style=\"color: rgb(198, 120, 221);\"><br></span></div><div style=\"color: rgb(187, 187, 187);\"><span style=\"color: rgb(198, 120, 221);\">function</span> <span style=\"color: rgb(97, 175, 239);\">buildFunctions</span>() {<br></div><font color=\"#bbbbbb\"><br></font><div style=\"color: rgb(187, 187, 187);\">    <span style=\"color: #c678dd;\">var</span> <span style=\"color: #e06c75;\">arr</span> <span style=\"color: #abb2bf;\">=</span> [];</div><font color=\"#bbbbbb\"><br></font><div style=\"color: rgb(187, 187, 187);\">    <span style=\"color: #c678dd;\">for</span>(<span style=\"color: #c678dd;\">var</span> <span style=\"color: #e06c75;\">i</span> <span style=\"color: #abb2bf;\">=</span> <span style=\"color: #d19a66;\">0</span>; <span style=\"color: #e06c75;\">i</span> <span style=\"color: #abb2bf;\">&lt;</span> <span style=\"color: #d19a66;\">3</span>; <span style=\"color: #e06c75;\">i</span><span style=\"color: #abb2bf;\">++</span>) {</div><div style=\"color: rgb(187, 187, 187);\">        <span style=\"color: #c678dd;\">let</span> <span style=\"color: #e06c75;\">j</span> <span style=\"color: #abb2bf;\">=</span> <span style=\"color: #e06c75;\">i</span>;</div><div style=\"color: rgb(187, 187, 187);\">        <span style=\"color: #e06c75;\">arr</span>.<span style=\"color: #56b6c2;\">push</span>(</div><div style=\"color: rgb(187, 187, 187);\">            (<span style=\"color: #c678dd;\">function</span>(<span style=\"color: #e06c75;font-style: italic;\">j</span>) {</div><div style=\"color: rgb(187, 187, 187);\">                <span style=\"color: #c678dd;\">return</span> <span style=\"color: #c678dd;\">function</span>() {</div><div style=\"color: rgb(187, 187, 187);\">                    <span style=\"color: #e5c07b;\">console</span>.<span style=\"color: #61afef;\">log</span>(<span style=\"color: #e06c75;\">j</span>);</div><div style=\"color: rgb(187, 187, 187);\">                }</div><div style=\"color: rgb(187, 187, 187);\">            }(<span style=\"color: #e06c75;\">i</span>))</div><div style=\"color: rgb(187, 187, 187);\">        )</div><div style=\"color: rgb(187, 187, 187);\">    }</div><div style=\"color: rgb(187, 187, 187);\">    <span style=\"color: #c678dd;\">return</span> <span style=\"color: #e06c75;\">arr</span>;</div><div style=\"color: rgb(187, 187, 187);\">}</div><font color=\"#bbbbbb\"><br></font><div style=\"color: rgb(187, 187, 187);\"><span style=\"color: #c678dd;\">var</span> <span style=\"color: #e06c75;\">fs</span> <span style=\"color: #abb2bf;\">=</span> <span style=\"color: #61afef;\">buildFunctions</span>();</div><font color=\"#bbbbbb\"><br></font><div style=\"color: rgb(187, 187, 187);\"><span style=\"color: #e06c75;\">fs</span>[<span style=\"color: #d19a66;\">0</span>]();</div><div style=\"color: rgb(187, 187, 187);\"><span style=\"color: #e06c75;\">fs</span>[<span style=\"color: #d19a66;\">1</span>]();</div><div style=\"color: rgb(187, 187, 187);\"><span style=\"color: #e06c75;\">fs</span>[<span style=\"color: #d19a66;\">2</span>]();</div></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "<h3>Function factory&nbsp;</h3><div><i>create functions from other functions</i></div><div><i><br></i></div><div>new execution contexts for each function&nbsp;</div><div><br></div><div><div style=\"color: rgb(187, 187, 187); background-color: rgb(40, 44, 52); font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 18px; white-space: pre;\"><div><span style=\"color: #c678dd;\">function</span> <span style=\"color: #61afef;\">makeGreeting</span>(<span style=\"color: #e06c75;font-style: italic;\">language</span>) {</div><div>    <span style=\"color: #c678dd;\">return</span> <span style=\"color: #c678dd;\">function</span>(<span style=\"color: #e06c75;font-style: italic;\">firstname</span>, <span style=\"color: #e06c75;font-style: italic;\">lastname</span>) {</div><div>        <span style=\"color: #c678dd;\">if</span>(<span style=\"color: #e06c75;\">language</span> <span style=\"color: #56b6c2;\">===</span> <span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">en</span><span style=\"color: #98c378;\">'</span>) {</div><div>            <span style=\"color: #e5c07b;\">console</span>.<span style=\"color: #61afef;\">log</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">Hello </span><span style=\"color: #98c378;\">'</span><span style=\"color: #56b6c2;\">+</span><span style=\"color: #e06c75;\">firstname</span><span style=\"color: #56b6c2;\">+</span> <span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\"> </span><span style=\"color: #98c378;\">'</span><span style=\"color: #56b6c2;\">+</span><span style=\"color: #e06c75;\">lastname</span>);</div><div>        }</div><br><div>        <span style=\"color: #c678dd;\">if</span>(<span style=\"color: #e06c75;\">language</span> <span style=\"color: #56b6c2;\">===</span> <span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">es</span><span style=\"color: #98c378;\">'</span>) {</div><div>            <span style=\"color: #e5c07b;\">console</span>.<span style=\"color: #61afef;\">log</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">Hola </span><span style=\"color: #98c378;\">'</span><span style=\"color: #56b6c2;\">+</span><span style=\"color: #e06c75;\">firstname</span><span style=\"color: #56b6c2;\">+</span><span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\"> </span><span style=\"color: #98c378;\">'</span><span style=\"color: #56b6c2;\">+</span><span style=\"color: #e06c75;\">lastname</span>);</div><div>        }</div><div>    }</div><div>}</div><br><div><span style=\"color: #c678dd;\">var</span> <span style=\"color: #e06c75;\">greetEnglish</span> <span style=\"color: #abb2bf;\">=</span> <span style=\"color: #61afef;\">makeGreeting</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">en</span><span style=\"color: #98c378;\">'</span>);</div><div><span style=\"color: #c678dd;\">var</span> <span style=\"color: #e06c75;\">greetSpanish</span> <span style=\"color: #abb2bf;\">=</span> <span style=\"color: #61afef;\">makeGreeting</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">es</span><span style=\"color: #98c378;\">'</span>);</div><br><div><span style=\"color: #61afef;\">greetEnglish</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">John</span><span style=\"color: #98c378;\">'</span>,<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">Doe</span><span style=\"color: #98c378;\">'</span>);</div><div><span style=\"color: #61afef;\">greetSpanish</span>(<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">John</span><span style=\"color: #98c378;\">'</span>,<span style=\"color: #98c378;\">'</span><span style=\"color: #98c379;\">Doe</span><span style=\"color: #98c378;\">'</span>);</div></div></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "<br>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

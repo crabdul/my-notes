@@ -1,0 +1,9 @@
+{
+  "title": "Handling failed HTTP responses with fetch()",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "You'd expect the code below:\n```js\nfetch(\"http://httpstat.us/500\")\n    .then(function() {\n        console.log(\"ok\");\n    }).catch(function() {\n        console.log(\"error\");\n    });\n```\nto print `error`.\n\nExcept it doesn't, it prints `ok`.\n\n## Why does fetch() work this way?\n\nthe `fetch` API rejects a promise when a _network error is encountered, basically is the user is offline or some unlikely networking error occuring_.\n\n```js\nfunction handleErrors(response) {\n    if (!response.ok) {\n        throw Error(response.statusText);\n    }\n    return response;\n}\n\nfetch(\"http://httpstat.us/500\")\n    .then(handleErrors)\n    .then(response => console.log(\"ok\"));\n    .catch(error => console.log(error));\n```\n"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "title": "JSON APIs / Ajax",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Change text with click events&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<script>\n  $(document).ready(function() {\n    // click handler to trigger changing message \n    $(\"#getMessage\").on(\"click\", function(){\n      // Change html for element with class \"message\" \n      $(\".message\").html(\"Here is the message\");\n    });\n  });\n</script>\n\n\n<div class=\"container-fluid\">\n  <div class = \"row text-center\">\n    <h2>Cat Photo Finder</h2>\n  </div>\n  <div class = \"row text-center\">\n    <div class = \"col-xs-12 well message\">\n      The message will go here\n    </div>\n  </div>\n  <div class = \"row text-center\">\n    <div class = \"col-xs-12\">\n      <button id = \"getMessage\" class = \"btn btn-primary\">\n        Get Message\n      </button>\n    </div>\n  </div>\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Convert JSON data to HTML&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<script>\n  $(document).ready(function() {\n    \n    $(\"#getMessage\").on(\"click\", function() {\n      \n      $.getJSON(\"/json/cats.json\", function(json) {\n        \n        var html = \"\";\n        // Iterate through file values \n        json.forEach(function(val) {\n          // Get keys of the key-value pairs\n          var keys = Object.keys(val);\n          // New cat section\n          html += \"<div class = 'cat'>\";\n          // Iterate through keys\n          keys.forEach(function(key) {\n            html += \"<strong>\" + key + \"</strong>: \" +    val[key] + \"<br>\";\n          });\n          html += \"</div><br>\";\n          \n        });\n        // Update with formatted JSON information \n        $(\".message\").html(html);\n      });\n    });\n  });\n</script>\n\n<div class=\"container-fluid\">\n  <div class = \"row text-center\">\n    <h2>Cat Photo Finder</h2>\n  </div>\n  <div class = \"row text-center\">\n    <div class = \"col-xs-12 well message\">\n      The message will go here\n   </div>\n  </div>\n  <div class = \"row text-center\">\n    <div class = \"col-xs-12\">\n      <button id = \"getMessage\" class = \"btn btn-primary\">\n        Get Message\n      </button>\n    </div>\n  </div>\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Image using JSON</b>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<script>\n  $(document).ready(function() {\n\n    $(\"#getMessage\").on(\"click\", function() {\n      $.getJSON(\"/json/cats.json\", function(json) {\n\n        var html = \"\";\n        json.forEach(function(val) {\n\n          html += \"<div class = 'cat'>\";\n          html += \"<img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'>\";\n          html += \"</div>\";\n\n        });\n        $(\".message\").html(html);\n      });\n    });\n  });\n</script>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Prefilter JSON</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// filter out the cat with id 1 \njson = json.filter(function(val) {\n  return (val.id !== 1);\n});"
+    },
+    {
+      "type": "text",
+      "data": "<b>Get geolocation data</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "if (navigator.geolocation) {\n  navigator.geolocation.getCurrentPosition(function(position) {\n    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"<br>longitude: \" + position.coords.longitude);\n  });\n}"
+    }
+  ]
+}

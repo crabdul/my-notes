@@ -1,0 +1,13 @@
+{
+  "title": "pgcli",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](https://www.pgcli.com/)"
+    },
+    {
+      "type": "markdown",
+      "data": "## Access local database\n```bash\npgcli -h localhost -p 5432 -U abdulkarim octo-consumer\n```"
+    }
+  ]
+}

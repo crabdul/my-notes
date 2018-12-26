@@ -1,0 +1,9 @@
+{
+  "title": "django.contrib.auth",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## `get_user_model`\n\n```py\n>>> from django.contrib.auth import get_user_model\n>>> User = get_user_model()\n>>> User.objects.all()\n```"
+    }
+  ]
+}

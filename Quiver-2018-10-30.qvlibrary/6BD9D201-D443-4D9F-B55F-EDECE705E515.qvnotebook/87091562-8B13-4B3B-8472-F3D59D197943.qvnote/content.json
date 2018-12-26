@@ -1,0 +1,62 @@
+{
+  "title": "Mixins",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>How to use mixins</h3><a href=\"https://scotch.io/tutorials/how-to-use-sass-mixins\">https://scotch.io/tutorials/how-to-use-sass-mixins</a>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Horizontally enter block elements</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "/// Horizontally centers block elements\n/// @access public\n/// @example scss - Usage\n///   .foo {\n///     @include center-block;\n///   }\n/// @example css - Result\n///   .foo {\n///     display: block;\n///     margin-left: auto;\n///     margin-right: auto;\n///   }\n@mixin center-block {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Vertically center with unknown height</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "/// Vertically centers block elements with unknown height.\n/// @access public\n/// @example scss - Usage\n///   .foo {\n///     @include center-h--unk;\n///   }\n/// @example css - Result\n///   .foo {\n///     position: relative;\n///     top: 50%;\n///     -webkit-transform: translateY(-50%);\n///     -ms-transform: translateY(-50%);\n///     transform: translateY(-50%);\n///   }\n@mixin center-h--unk {\n    position: relative;\n    top: 50%;\n    @include prefix(transform, translateY(-50%), 'webkit' 'ms');\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Hardware accelerations</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "/// Forces browsers to use hardware acceleration for transforms\n/// @access public\n/// @example scss - Usage\n///   .foo {\n///     @include ha;\n///   }\n/// @example css - Result\n///   .foo {\n///     -webkit-transform: translate3d(0, 0, 0);\n///     -moz-transform: translate3d(0, 0, 0);\n///     transform: translate3d(0, 0, 0);\n///   }\n@mixin ha {\n    @include prefix(transform, translate3d(0, 0, 0), 'webkit' 'ms');\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>query&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "/// Media query helper for declaring media queries by width, and, optionally, ratio.\n/// @access public\n/// @param {Length} $width - Max-width\n/// @param {Number | False} $ratio [false] - Min device pixel ratio\n/// @example scss - Usage\n///   .foo {\n///     @include mquery(350px, 2) {\n///       width: 100%;\n///     }\n///   }\n@mixin mquery($width, $ratio: false) {\n    @if $ratio {\n        @media\n            only screen and (max-width: $width) and  (min--moz-device-pixel-ratio: $ratio),\n            only screen and (max-width: $width) and  (-webkit-min-device-pixel-ratio: $ratio),\n            only screen and (max-width: $width) and  (min-device-pixel-ratio: $ratio) {\n            @content;\n        }\n    } @else {\n        @media only screen and (max-width: $width) {\n            @content;\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Position&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "/// Shorthandizes position declarations.\n/// @access public\n/// @param {String} $type - Either `relative`, `absolute` or `fixed`\n/// @param {Length} $left [null] - Left offset\n/// @param {Length} $right [null] - Right offset\n/// @param {Length} $top [null] - Top offset\n/// @param {Length} $bottom [null] - Bottom offset\n/// @example scss - Usage\n///   .foo {\n///     @include position(absolute, $top: 10px, $left: 10px);\n///   }\n/// @example css - Result\n///   .foo {\n///     position: absolute;\n///     left: 10px;\n///     top: 10px;\n///   }\n@mixin position($type, $top: null, $right: null, $bottom: null, $left: null) {\n    position: $type;\n    top: $top;\n    right: $right;\n    bottom: $bottom;\n    left: $left;\n}\n"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

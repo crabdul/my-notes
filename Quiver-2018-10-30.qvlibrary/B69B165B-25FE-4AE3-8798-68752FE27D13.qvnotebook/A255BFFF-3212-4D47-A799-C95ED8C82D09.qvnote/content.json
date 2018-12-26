@@ -1,0 +1,9 @@
+{
+  "title": "Blackbox testing",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Sources**\n- [Duck testing](https://github.com/reduxjs/redux/issues/1171)"
+    }
+  ]
+}

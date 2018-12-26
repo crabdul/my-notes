@@ -1,0 +1,53 @@
+{
+  "title": "Middleware",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>Middleware is created by composing functionality that wraps separate cross-cutting concerns which are not part of your main execution task.</div>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"https://medium.com/@meagle/understanding-87566abcfb7a\">https://medium.com/@meagle/understanding-87566abcfb7a</a>"
+    },
+    {
+      "type": "text",
+      "data": "<div>In the case of Redux middleware the main execution task is the store’s dispatch function. The dispatch function is responsible for sending actions to one or many reducer functions for state changes. The composed specialized functions around the original dispatch method creates the new middleware capable dispatch method. Here is the source for applyMiddleware (from Redux 1.0.1) which we will be examining:</div>"
+    },
+    {
+      "type": "code",
+      "language": "jsx",
+      "data": "export default function applyMiddleware(...middlewares) {\n  return (next) => \n    (reducer, initialState) => {\n      var store = next(reducer, initialState);\n      var dispatch = store.dispatch;\n      var chain = [];\n      var middlewareAPI = {\n        getState: store.getState,\n        dispatch: (action) => dispatch(action)\n      };\n      chain = middlewares.map(middleware =>\n                    middleware(middlewareAPI));\n      dispatch = compose(...chain, store.dispatch);\n      return {\n        ...store,\n        dispatch\n      };\n   };\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Redux Middleware</h3><div>Redux middleware is designed by creating functions that can be composed together before the main dispatch method is invoked. Let’s start by creating a very simple logger middleware function that can echo the state of your application before and after running your main dispatch function. Redux middleware functions have this signature:</div><div><span style=\"color: rgb(221, 221, 221);\"></span></div>"
+    },
+    {
+      "type": "code",
+      "language": "jsx",
+      "data": "middleware:: next -> action -> retVal"
+    },
+    {
+      "type": "text",
+      "data": "<div><span style=\"color: rgb(221, 221, 221);\">It might look something like this:</span></div><div><span style=\"color: rgb(221, 221, 221);\"></span></div>"
+    },
+    {
+      "type": "code",
+      "language": "jsx",
+      "data": "export default function createLogger({ getState }) {\n  return (next) => \n    (action) => {\n      const console = window.console;\n      const prevState = getState();\n      const returnValue = next(action);\n      const nextState = getState();\n      const actionType = String(action.type);\n      const message = `action ${actionType}`;\n      console.log(`%c prev state`, `color: #9E9E9E`, prevState);\n      console.log(`%c action`, `color: #03A9F4`, action);\n      console.log(`%c next state`, `color: #4CAF50`, nextState);\n      return returnValue;\n    };\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Dissecting applyMiddlewareTOSTORE.js</h3>"
+    },
+    {
+      "type": "code",
+      "language": "jsx",
+      "data": "export default function applyMiddleware(...middlewares) {\n  return (next) => \n    (reducer, initialState) => {\n      var store = next(reducer, initialState);\n      var dispatch = store.dispatch;\n      var chain = [];\n      var middlewareAPI = {\n        getState: store.getState,\n        dispatch: (action) => dispatch(action)\n      };\n      chain = middlewares.map(middleware =>\n                       middleware(middlewareAPI));\n      dispatch = compose(...chain, store.dispatch);\n      return {\n        ...store,\n        dispatch\n      };\n   };\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

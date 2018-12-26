@@ -1,0 +1,33 @@
+{
+  "title": "Functions",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Mutator, getter, predicate\nThese functions should include the keywords `set`,`get`, and `is`\n\n## Do one thing well \nfunction should be able to be described by a brief \"TO\" paragraph.\nWhat do I mean by \"TO\"? The LOGO language used the keyword \"TO\" in the same way Python uses \"def\".\n\nExample\n> TO show a reminder, we check to see whether the user has any reminders, and if so, we return the reminder\n\nTwo ways to look at whether a function is only doing one thing:\n- If the steps are one level below the name of the function\n- If you can extract another function with a name that isn't a mere restatement of its implentation\n\n\n## One Level of abstraction per function\nMixing levels of abstraction within a function is always confusing. Readers may not be able to tell whether a particular expression is an essential concept or detail.\n\n## Flag arguments\nComplicates the signature of the method. It does one thing if the flag is true and another if the flag is false"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": "## command query separation\n```\nif (attributeexists(\"username\")) {\n  setattribute(\"username\", \"unclebob\");\n}\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "## Prefer Exceptions to Returning Error Codes\n\n### Extract Try/Catch Blocks\n\n```\npublic voide delete(Page page) {\n    try {\n        deletePageAndAllReferences(page);\n    }\n    catch (Exception e) {\n        logError(e);\n    }\n}\n\nprivate void deletePageAndAllReferences(Page page) throws Exception {\n    ...\n}\n\nprivate void logError(Exception e) {\n    logger.log(e.getMessage());\n}\n"
+    },
+    {
+      "type": "markdown",
+      "data": "## Dependency Magnets\n\nconstants and enums are imported by many classes"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

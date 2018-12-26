@@ -1,0 +1,52 @@
+{
+  "title": "Related Manager",
+  "cells": [
+    {
+      "type": "text",
+      "data": "a manager used in a one-to-many or many-to-many related context"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Examples</h3><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div>1. the ‘other side’ of a ForeignKey relation, we can do python.programmer__set</div><div><b>IMOW </b>we’re returning a list on Programmer instances which are related to the Language instance we’re calling the programmer__set function from</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "from django.db import models\n\nclass Langauge(models.Model):\n  pass\n  \nclass Programmer(models.Model):\n  languages = models.ForeignKey(Languages, on_delete=models.CASCADE)\n"
+    },
+    {
+      "type": "text",
+      "data": "2. both sides of a ManyToManyField relation"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "class Topping(models.Model):\n  pass\n  \nclass Pizza(models.Model):\n  toppings = models.ManyToMany(Topping)"
+    },
+    {
+      "type": "text",
+      "data": "topping.pizza_set and pizza.toppings"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Messing about</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<div style=\"color: rgb(245, 245, 245); background-color: rgb(33, 38, 52); font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 21px; white-space: pre;\"><div><span style=\"color: #cb6cfe;\">from</span> django.db <span style=\"color: #cb6cfe;\">import</span> models</div><br><div><span style=\"color: #ae81ff;\">class</span> <span style=\"color: #ffcc00;\">Company</span>(<span style=\"color: #ffcc00;font-style: italic;text-decoration: underline;\">models</span>.<span style=\"color: #ffcc00;font-style: italic;text-decoration: underline;\">Model</span>):</div><div>    name <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">CharField(</span><span style=\"color: #fb467b;font-style: italic;\">max_length</span><span style=\"color: #56d6d6;\">=</span><span style=\"color: #f78c6c;\">20</span><span style=\"color: #61afef;\">)</span></div><div>    location <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">CharField(</span><span style=\"color: #fb467b;font-style: italic;\">max_length</span><span style=\"color: #56d6d6;\">=</span><span style=\"color: #f78c6c;\">20</span><span style=\"color: #61afef;\">)</span></div><div>    date_created <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">DateField()</span> </div><br><div>    <span style=\"color: #ae81ff;\">def</span> <span style=\"color: #56d6d6;\">__str__</span>(<span style=\"color: #fb467b;font-style: italic;\">self</span>):</div><div>        <span style=\"color: #cb6cfe;\">return</span> <span style=\"color: #97a7c8;\">self</span>.name</div><br><div><span style=\"color: #ae81ff;\">class</span> <span style=\"color: #ffcc00;\">Language</span>(<span style=\"color: #ffcc00;font-style: italic;text-decoration: underline;\">models</span>.<span style=\"color: #ffcc00;font-style: italic;text-decoration: underline;\">Model</span>):</div><div>    name <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">CharField(</span><span style=\"color: #fb467b;font-style: italic;\">max_length</span><span style=\"color: #56d6d6;\">=</span><span style=\"color: #f78c6c;\">20</span><span style=\"color: #61afef;\">)</span></div><div>    creator <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">CharField(</span><span style=\"color: #fb467b;font-style: italic;\">max_length</span><span style=\"color: #56d6d6;\">=</span><span style=\"color: #f78c6c;\">20</span><span style=\"color: #61afef;\">)</span></div><div>    paradigm <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">CharField(</span><span style=\"color: #fb467b;font-style: italic;\">max_length</span><span style=\"color: #56d6d6;\">=</span><span style=\"color: #f78c6c;\">20</span><span style=\"color: #61afef;\">)</span></div><div>    date_created <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">DateField()</span></div><br><div>    <span style=\"color: #ae81ff;\">def</span> <span style=\"color: #56d6d6;\">__str__</span>(<span style=\"color: #fb467b;font-style: italic;\">self</span>):</div><div>        <span style=\"color: #cb6cfe;\">return</span> <span style=\"color: #97a7c8;\">self</span>.name</div><br><div><span style=\"color: #ae81ff;\">class</span> <span style=\"color: #ffcc00;\">Programmer</span>(<span style=\"color: #ffcc00;font-style: italic;text-decoration: underline;\">models</span>.<span style=\"color: #ffcc00;font-style: italic;text-decoration: underline;\">Model</span>):</div><div>    name <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">CharField(</span><span style=\"color: #fb467b;font-style: italic;\">max_length</span><span style=\"color: #56d6d6;\">=</span><span style=\"color: #f78c6c;\">20</span><span style=\"color: #61afef;\">)</span></div><div>    age <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">IntegerField()</span></div><div>    company <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">ForeignKey(Company, </span><span style=\"color: #fb467b;font-style: italic;\">on_delete</span><span style=\"color: #56d6d6;\">=</span><span style=\"color: #61afef;\">models.CASCADE)</span></div><div>    languages <span style=\"color: #56d6d6;\">=</span> models.<span style=\"color: #61afef;\">ManyToManyField(Language)</span></div><br><div>    <span style=\"color: #ae81ff;\">def</span> <span style=\"color: #56d6d6;\">__str__</span>(<span style=\"color: #fb467b;font-style: italic;\">self</span>):</div><div>        <span style=\"color: #cb6cfe;\">return</span> <span style=\"color: #97a7c8;\">self</span>.name</div></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ">>> C.programmer_set.create(name='Karim', age='100', company=google)\n<Programmer: Karim>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

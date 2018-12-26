@@ -1,0 +1,17 @@
+{
+  "title": "mozjpeg",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<a href=\"https://github.com/mozilla/mozjpeg\">https://github.com/mozilla/mozjpeg</a>"
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/BFA42DC7D5F06D61914755E4A2870652.png\" alt=\"Screen Shot 2018-08-25 at 14.11.57.png\" width=\"1260\" height=\"414\">"
+    },
+    {
+      "type": "text",
+      "data": "([imageminMozjpeg({<div>&nbsp; quality: 85</div><div>})]))</div>"
+    }
+  ]
+}

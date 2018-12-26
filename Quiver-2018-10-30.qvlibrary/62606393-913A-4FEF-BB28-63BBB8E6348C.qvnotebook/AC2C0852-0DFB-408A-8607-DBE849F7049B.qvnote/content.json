@@ -1,0 +1,9 @@
+{
+  "title": "datetime",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# How to convert datetime to and from ISO 8601 string\n\nConvert a datetime object to string in ISO 8601 format:\n```python\nimport datetime\ndatetime_str = some_datetime_obj.isoformat()\n```\nConvert a ISO 8601 format string to datetime object:\n```python\nimport dateutil.parser\nsome_datetime_obj = dateutil.parser.parse(datetime_str)\n```"
+    }
+  ]
+}

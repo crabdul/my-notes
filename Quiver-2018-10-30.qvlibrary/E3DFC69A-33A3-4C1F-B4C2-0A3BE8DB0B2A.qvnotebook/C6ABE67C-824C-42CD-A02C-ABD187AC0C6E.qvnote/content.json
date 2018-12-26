@@ -1,0 +1,13 @@
+{
+  "title": "django.views",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**`ListView`**\n\n```py\nclass IndexView(generic.ListView):\n    template_name = 'polls/index.html'\n    context_object_name = 'last_question_list'\n    \n    def get_queryset(self):\n        return Question.objects.order_by('-pub_date')[:5]\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "**`DetailView`**\n\nThe generic view expects the the pk value captured from the URL to be called \"pk\"\n\n```py\npath('<int:pk>/', views.DetailView.as_view(), name='detail')\n```\n\n```py\nclass DetailView(generic.DetailView):\n    model = Question\n    template_name = 'polls/detail.html`\n```"
+    }
+  ]
+}

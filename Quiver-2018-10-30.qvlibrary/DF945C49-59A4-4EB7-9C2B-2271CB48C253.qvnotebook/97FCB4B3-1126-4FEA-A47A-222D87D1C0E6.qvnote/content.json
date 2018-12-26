@@ -1,0 +1,9 @@
+{
+  "title": "Once",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Ensures a function is called only once**\n\n```js\n\nconst once = fn => {\n    let called = false\n    return function(...args) {\n        if (called) return\n        called = true\n        return fn.apply(this, args)\n    }\n}\n\n```\n\nExample\n```js\n\nconst startApp = function(event) {\n  console.log(this, event); // document.body, MouseEvent\n};\ndocument.body.addEventListener('click', once(startApp)); // only runs `startApp` once upon click\n\n```"
+    }
+  ]
+}

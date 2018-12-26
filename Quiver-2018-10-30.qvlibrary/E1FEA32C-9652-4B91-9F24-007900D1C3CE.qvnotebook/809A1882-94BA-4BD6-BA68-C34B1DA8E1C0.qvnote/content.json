@@ -1,0 +1,9 @@
+{
+  "title": "Implementing writable streams",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Implement a new Writable stream by inheriting the prototype of stream Writable and providing an implementation for the `write()` method.\n\n## Building a writable stream \n\nStream receives objects in the following format:\n\n```py\n{\n    path:\n    content:\n}\n```\n\nThe inputs of the stream are objects, therefore the stream has to work in `object` mode.\n\n"
+    }
+  ]
+}

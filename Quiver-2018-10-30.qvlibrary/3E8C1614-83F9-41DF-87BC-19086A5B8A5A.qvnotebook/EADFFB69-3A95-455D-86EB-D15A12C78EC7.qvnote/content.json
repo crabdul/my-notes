@@ -1,0 +1,9 @@
+{
+  "title": "ssh-keygen",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Generate keys**\n```\nssh-keygen -t rsa -b 4096 -C 23074754+crabdul@users.noreply.github.com\n```"
+    }
+  ]
+}

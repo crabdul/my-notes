@@ -1,0 +1,17 @@
+{
+  "title": "Wrapper Decorators",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Used for wrapping functions\n\n```python\n@decorator\ndef add(x, y):\n```\nequivalent to\n```python\nadd = decorator(add)\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "## Example\nTiming functions\n\n```python\nfrom time import time\ndef timer(func):\n    def f(x, y=10):\n        before = time()\n        rv = func(x, y)\n        after = time()\n        print('elapsed', after = before)\n        return rv\n    return f\n    \n@timer\ndef add(x, y=10):\n    return x + y\n    \ndef sub(x, y=10):\n    return x - y\n"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

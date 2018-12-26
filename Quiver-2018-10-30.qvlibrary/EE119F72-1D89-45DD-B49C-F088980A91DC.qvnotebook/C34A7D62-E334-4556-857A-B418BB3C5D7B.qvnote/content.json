@@ -1,0 +1,9 @@
+{
+  "title": "Declarative vs. Imperative programming",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Declarative**\n\nExpresses what the desired result is\n\nExplains the logic of the computation without describing the control flow"
+    }
+  ]
+}

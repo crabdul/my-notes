@@ -1,0 +1,9 @@
+{
+  "title": "Promises",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```js\nvar promise1 = new Promise(function(resolve, reject) {\n  setTimeout(function() {\n    resolve('foo');\n  }, 300);\n});\n\npromise1.then(function(value) {\n  console.log(value);\n  // expected output: \"foo\"\n});\n\nconsole.log(promise1);\n// expected output: [object Promise]\n\n```"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "INSERT INTO",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```sql\nINSERT INTO flights\n  (origin, destination, duration)\n  VALUES ('New York', 'London', 415);\n```"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "title": "OOP and functional programming ",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Using a constructor&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var MotorBike = function() {\n    this.wheels = 2;\n  this.engines = 1;\n  this.seats = 1;\n};"
+    },
+    {
+      "type": "text",
+      "data": "<b>Make instances of an object&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 5;\n};\n\nvar myCar = new Car();\nmyCar.nickname = \"wag1\";"
+    },
+    {
+      "type": "text",
+      "data": "<b>Passing arguments into the constructor&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var Car = function(wheels, seats, engines) {\n  this.wheels = wheels;\n  this.seats = seats;\n  this.engines = engines;\n};"
+    },
+    {
+      "type": "text",
+      "data": "<b>Making object properties private&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var Car = function() {\n  // this is a private variable\n  var speed = 10;\n\n  // these are public methods\n  this.accelerate = function(change) {\n    speed += change;\n  };\n\n  this.decelerate = function() {\n    speed -= 5;\n  };\n\n  this.getSpeed = function() {\n    return speed;\n  };\n};"
+    },
+    {
+      "type": "text",
+      "data": "<b>Iterate over arrays with map function</b><div>create a new array with elements that have been modified by the call back function&nbsp;</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var oldArray = [1, 2, 3];\nvar timesFour = oldArray.map(function(val){\n  return val * 4;\n});\nconsole.log(timesFour); // returns [4, 8, 12]\nconsole.log(oldArray);  // returns [1, 2, 3]"
+    },
+    {
+      "type": "text",
+      "data": "<b>Condense arrays with reduce&nbsp;</b><div>example sums all the elements in the array</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var singleVal = array.reduce(function(previousVal, currentVal) {\n  return previousVal + currentVal;\n}, 0);"
+    },
+    {
+      "type": "text",
+      "data": "<b>Filter arrays</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var oldArray = [1,2,3,4,5,6,7,8,9,10];\n\nvar newArray = oldArray.filter(function(val) {\n  return val < 6;\n});"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "[1,2,3,4,5]"
+    },
+    {
+      "type": "text",
+      "data": "<b>Sort in descending order</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var array = [1, 12, 21, 2];\n\narray.sort(function(a,b){return b-a});\narray.reverse();"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "[21,12,2,1]\n[1,2,12,21]"
+    },
+    {
+      "type": "text",
+      "data": "<b>Concatenating strings&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var oldArray = [1,2,3];\nvar newArray = [];\n\nvar concatMe = [4,5,6];\n\nnewArray = oldArray.concat(concatMe);"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "[1,2,3,4,5,6]"
+    },
+    {
+      "type": "text",
+      "data": "<b>Split string into lists</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "list = string.split(\" \");"
+    },
+    {
+      "type": "text",
+      "data": "<b>Join strings&nbsp;</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var veggies = [\"Celery\", \"Radish\", \"Carrot\", \"Potato\"];\nvar salad = veggies.join(\" and \");\nconsole.log(salad); // \"Celery and Radish and Carrot and Potato\""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

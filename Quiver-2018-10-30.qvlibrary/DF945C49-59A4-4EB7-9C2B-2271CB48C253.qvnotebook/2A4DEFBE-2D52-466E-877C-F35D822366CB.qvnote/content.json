@@ -1,0 +1,9 @@
+{
+  "title": "Memoize",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Returns the cached function**\n\nCreate an empty cache by instantiating a new `Map` object. Return a fucntion which takes a single argument to be supplied to the memoied function by first checking if the function's output for that specific input value is already cache and return it if not. \n\nThe `function` keyword must be used in order to allow the memoized function to have its `this` context changed if necessary. Allow access to the `cache` by setting it a as property on the returned function.\n\n```js\nconst memoize = fn => {\n    const cache = new Map();\n    const cached = function(val) {\n        return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val)\n    }\n    cached.cache = cache\n    return cached\n}\n```\n\nExample\n```js\nconst anagramsCached = memoize(anagrams)\nanagramsCached('javascript') // takes a long time\nanagramsCached('javascript') // returns instantly sinced it's cached\nconsole.log(anagramsCached.cache) // The cached anagrams map\n```"
+    }
+  ]
+}

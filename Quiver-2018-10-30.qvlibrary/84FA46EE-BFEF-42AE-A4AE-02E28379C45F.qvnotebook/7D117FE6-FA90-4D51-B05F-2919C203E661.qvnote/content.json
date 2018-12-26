@@ -1,0 +1,13 @@
+{
+  "title": "SELECT",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## WHERE\nReturn rows where sting pattern matches\n```sql\nSELECT * from flights\n  WHERE origin LIKE '%a%';\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "## Agreggator functions\n\n### COUNT\n```sql\nSELECT COUNT(*) from flights\n  WHERE origin LIKE '%a%';\n```\nreturns \n```\n+---------+\n| count   |\n|---------|\n| 3       |\n+---------+\n```\n\n### SUM\n```sql\nSELECT SUM(duration) from flights\n  WHERE origin LIKE '%a%';\n```\n\n### MIN \n```sql\nSELECT MIN(duration) from flights\n  WHERE origin LIKE '%a%';\n```\n\n### MAX\n```sql\nSELECT MAX(duration) from flights\n  WHERE origin LIKE '%a%';\n```\n\n### AVG\n```sql\nSELECT AVG(duration) from flights\n  WHERE origin LIKE '%a%';\n```"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Inheritance",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>Understand that inheritance in JavaScript works through the [[Prototype]] chain.</b></div><div><b>&nbsp;Understand how to set up inheritance through functions and objects and how new helps us implement it.&nbsp;</b></div><div><b>Know what the __proto__ and prototype properties are and what they do.</b></div>"
+    }
+  ]
+}

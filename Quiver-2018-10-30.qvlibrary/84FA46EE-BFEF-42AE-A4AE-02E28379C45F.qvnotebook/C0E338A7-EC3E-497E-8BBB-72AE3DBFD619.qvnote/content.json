@@ -1,0 +1,25 @@
+{
+  "title": "CREATE TABLE",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```sql\nCREATE TABLE flights (\n  id SERIAL PRIMARY KEY,\n  origin VARCHAR NOT NULL,\n  destination VARCHAR NOT NULL,\n  duration INTEGER NOT NULL\n);\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "### Constraints\n- NOT NULL\n- UNIQUE\n- PRIMARY KEY\n- DEFAULT\n- CHECK\n- REFERENCES flights\n\n#### References\n```sql\ncreate table passengers (\n    id serial primary key,\n    name varchar not null,\n    flight_id integer references flights (id)\n); \n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

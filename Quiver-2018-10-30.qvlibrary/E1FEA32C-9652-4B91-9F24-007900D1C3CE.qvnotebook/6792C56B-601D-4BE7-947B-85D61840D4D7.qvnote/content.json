@@ -1,0 +1,70 @@
+{
+  "title": "What is Node.js",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>A server-side javascript runtime environment</b><br>"
+    },
+    {
+      "type": "text",
+      "data": "V8 is the car’s engine. Node.js is everything else"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Nodejs presents itself as two applications</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<ol><li>A script processor</li><li>A REPL (Read Eval Print Loop)</li></ol>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>script processor</h2>"
+    },
+    {
+      "type": "text",
+      "data": "1. Reads in the entry file"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "node index.js"
+    },
+    {
+      "type": "text",
+      "data": "2. Reads in all the dependencies that file specifies, and all the dependencies of those files<div>3. Begins executing the synchronous tasks in the main execution stack<br></div><div>4. Begins processing the ‘todo list’ by repeating the event loop (executing the synchronous tasks called in the callbacks and the subsequent new asynchronous tasks) until it has nothing to do (A video on the event loop)&nbsp;<a href=\"https://www.youtube.com/watch?v=N0Au8yc5IOw\">https://www.youtube.com/watch?v=N0Au8yc5IOw</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>Event loop is continually checking if there’s any new things for Node.js to do&nbsp;<br></li><li>Non-blocking tasks get added to the todolist, and Node processes them whenever it can</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Non-blocking IO</h3>"
+    },
+    {
+      "type": "text",
+      "data": "A non-blocking IO allows an app to do other things while it’s waiting around. Chucks stuff onto the todo-list"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Module system</h3>"
+    },
+    {
+      "type": "text",
+      "data": "creates a dependency tree, which tells Node which files are needed to run the application"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "PostgreSQL installation",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```sql\n# CREATE USER name;\n# CREATE DATABASE djangogirls OWNER name;\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "**`settings.py`**\n\n```py\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': 'djangogirls',\n        'USER': 'name',\n        'PASSWORD': '',\n        'HOST': 'localhost',\n        'PORT': '',\n    }\n}\n```\n\n## Installing PostgreSQL package for pyton\n\n```py\npip install psycopg2-binary\n```"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

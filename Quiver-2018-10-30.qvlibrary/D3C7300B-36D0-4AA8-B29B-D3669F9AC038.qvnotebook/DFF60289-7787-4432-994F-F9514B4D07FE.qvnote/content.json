@@ -1,0 +1,9 @@
+{
+  "title": "Migrate",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "[source](https://flask-migrate.readthedocs.io/en/latest/)\n\n```bash\npip install Flask-Migrate\n```\n\n```py\nfrom flask import Flask\nfrom flask_sqlalchemy import SQLAlchemy\nfrom flask_migrate import Migrate\n\napp = Flask(__name__)\napp.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'\n\ndb = SQLAlchemy(app)\nmigrate = Migrate(app, db)\n\nclass User(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(128))\n```\n\n## Create a migration repository\n```py\nflask db init\n```\n\n## Generate a migration \n```py\nflask db migrate\n```\n\n## Apply migration\n```py\nflask db upgrade\n```"
+    }
+  ]
+}

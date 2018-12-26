@@ -1,0 +1,9 @@
+{
+  "title": "Introduction",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# What is React used for?\n\nReact is a JavaScript library for building user interfaces, especially interactive UIs.\n\n## Declarative approach to views.\n\nWe tell React that the view should look like in a state, and when the data changes, React will efficiently update and render the right components to create a new view.\n\nWe don't need to worry about how we can represent a given state. That responsili\nSince we delegate the responsibility of representing the state, we only. Therefore, we never manipulate the DOM directly using any of the browser API selector methods."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "django.forms.ModelForm",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Creating forms from Models\n\nDjango provides a helper class that lets you create a `Form` class from a django model\n\n```py\nfrom django.db import models\nfrom django.forms import ModelForm\n\nTITLE_CHOICES = (\n    ('MR', 'Mr.'),\n    ('MRS', 'Mrs.'),\n    ('MS', 'Ms.'),\n)\n\nclass Author(models.Model):\n    name = models.CharField(max_length=100)\n    title = models.CharField(max_length=3, choices=TITLE_CHOICES)\n    birth_date = models.DateField(blank=True, null=True)\n\n    def __str__(self):\n        return self.name\n\nclass Book(models.Model):\n    name = models.CharField(max_length=100)\n    authors = models.ManyToManyField(Author)\n\nclass AuthorForm(ModelForm):\n    class Meta:\n        model = Author\n        fields = ['name', 'title', 'birth_date'] # or '__all__'\n\nclass BookForm(ModelForm):\n    class Meta:\n        model = Book\n        fields = ['name', 'authors']\n```\n\n\n## The save() method (and updating existing an existing Model instance)\n\n```py\n>>> from myapp.models import Article\n>>> from myapp.forms import ArticleForm\n\n# Create a form instance from POST data.\n>>> f = ArticleForm(request.POST)\n\n# Save a new Article object from the form's data.\n>>> new_article = f.save()\n\n# Create a form to edit an existing Article, but use\n# POST data to populate the form.\n>>> a = Article.objects.get(pk=1)\n>>> f = ArticleForm(request.POST, instance=a)\n>>> f.save()\n```"
+    }
+  ]
+}

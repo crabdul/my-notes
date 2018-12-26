@@ -1,0 +1,13 @@
+{
+  "title": "scp",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Copy file from remote host to local host**\n```\nscp -r root@XXX:/home/crabdul/backup.sql .\n```"
+    },
+    {
+      "type": "markdown",
+      "data": "[source](https://medium.com/dev-blogs/transferring-files-between-remote-server-and-local-system-133d78d58137)"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "ps",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**Finding information about a running process**\n`ps aux | grep nginx` "
+    }
+  ]
+}

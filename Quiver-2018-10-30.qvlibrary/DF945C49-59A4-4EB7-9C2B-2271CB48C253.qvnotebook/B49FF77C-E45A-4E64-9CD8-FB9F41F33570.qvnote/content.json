@@ -1,0 +1,17 @@
+{
+  "title": "Closure",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>Know that a function retains access to the scope that it was created in. Know what this enables us to do with our code. Understand that closures allow data hiding, memoization, and dynamic function generation.</b></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Understanding closure with ease</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"http://javascriptissexy.com/understand-javascript-closures-with-ease/\">http://javascriptissexy.com/understand-javascript-closures-with-ease/</a>"
+    }
+  ]
+}

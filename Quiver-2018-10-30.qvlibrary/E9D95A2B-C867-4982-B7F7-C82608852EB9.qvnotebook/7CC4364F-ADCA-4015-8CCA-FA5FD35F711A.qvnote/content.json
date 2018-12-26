@@ -1,0 +1,9 @@
+{
+  "title": "Basics of a neural network",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "![Screenshot 2018-12-15 at 15.34.40.png](quiver-image-url/D7AA5FE6F9C35DE7F30EDF65910FBF2F.png =692x339)\n\nEvery input layer feature is interconnected with every hidden layer feature.\n\nInput layer and first layer are densely connected"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Implementing readable streams",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "`read()` is called by the stream consumers.\n\n\n`push` pushs data into the internal reading buffer\nWhen `null` is pushed into the buffer, it indicates an `EOF` situation and the stream ends.\n\n```js\nimport { Readable } from 'stream'\n\nclass ReadableStream extends Readable {\n    constructor(options) {\n        super(options)\n        this.counter = 0\n    }\n    \n    _read(size) {\n        this.push(String.fromCharCode(this.currentCharCode++));\n        if (this.counter > 10) {\n            this.push(null);\n        }\n    }\n}\n```\n\n## Consuming a stream\n\n```js\nnew ReadableStream().pipe(process.stdout)\n```"
+    }
+  ]
+}
