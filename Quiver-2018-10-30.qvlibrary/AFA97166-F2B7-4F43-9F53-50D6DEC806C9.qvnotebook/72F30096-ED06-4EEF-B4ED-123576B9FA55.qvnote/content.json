@@ -1,0 +1,9 @@
+{
+  "title": "ESLint",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Maybe some useful stuff below\n\n```js\nmodule.exports = {\n    env: {\n        node: true,\n        es6: true,\n    },\n    extends: [\n        \"eslint:recommended\",\n        \"plugin:react/recommended\", // eslint-plugin-react\n        \"prettier\",\n        \"prettier/react\", // Adds exclusion for eslint-plugin-react\n        \"google\"\n    ],\n    parser: \"babel-eslint\",\n    plugins: [\"prettier\"],\n    rules: {\n        \"prettier/prettier\": [\n        \"error\",\n        // ESLint overrides\n        {\n            tabWidth: 4,\n            singleQuote: true,\n        },\n        ],\n        strict: 0,\n        indent: [2, 4],\n        'object-curly-spacing': [2, 'always'], // For spacing in brackets in ES6 imports\n        \"require-jsdoc\": [\"error\", {\n            \"require\": {\n                \"FunctionDeclaration\": false,\n                \"MethodDefinition\": false,\n                \"ClassDeclaration\": true,\n                \"ArrowFunctionExpression\": false,\n                \"FunctionExpression\": false\n            }\n        }]\n    },\n};\n```"
+    }
+  ]
+}
